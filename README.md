@@ -18,13 +18,12 @@ A rudimentary single-page application (SPA) built with [ClojureScript](https://g
     This will give you a  Hoplon development setup with:
     - auto compilation on file changes
     - audible warning for compilation success or failures
-    - auto reload the html page on changes
+    - auto reload the HTML page on changes
     - Clojurescript REPL
 
-2. Go to [http://localhost:8000][1] in your browser. You should see "Hello, Hoplon!".
+2. Go to [http://localhost:8000](http://localhost:8000) in your browser. You should see the application's landing page.
 
-3. If you edit and save a file, the task will recompile the code and reload the
-   browser to show the updated version.
+3. If you edit and save a file, the task will recompile the code and reload the browser to show the updated version.
 
 ### Production
 
@@ -33,11 +32,8 @@ A rudimentary single-page application (SPA) built with [ClojureScript](https://g
     $ boot prod
     ```
 
-2. The compiled files will be on the `target/` directory. This will use
-   advanced compilation and prerender the html.
+2. The compiled files will be on the `target/` directory. This will use advanced compilation and prerender the HTML.
 
 ## License
 
 Copyright © 2016 Daniel Kraus
-
-[1]: http://localhost:8000
