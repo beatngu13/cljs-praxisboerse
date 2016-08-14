@@ -1,4 +1,21 @@
-(page "index.html")
+(page "index.html"
+  (:require [cljs.core.async :refer [<!]]
+            [cljs-http.client :as http])
+  (:require-macros [cljs.core.async.macros :refer [go]]))
+
+(def rest-url "https://www.iwi.hs-karlsruhe.de/Intranetaccess/REST")
+
+(defc iz "")
+(defc pw "")
+
+(defn sign-in []
+  (go (let [response (<! (http/get
+                           (str rest-url "/credential/info")
+                           {:basic-auth {:username @iz :password @pw}}))
+            success  (:success response)]
+        (if success
+          (print (str "Hi " (get-in response [:body :firstName]) "!"))
+          (print "Invalid account and/or password.")))))
 
 (html
   (head
@@ -21,10 +38,10 @@
         (div :id "navbar" :class "navbar-collapse collapse"
           (form :class "navbar-form navbar-right"
             (div :class "form-group"
-              (input :type "text" :placeholder "IZ account" :class "form-control"))
+              (input :type "text" :placeholder "IZ account" :class "form-control" :value iz :change #(reset! iz @%)))
             (div :class "form-group"
-              (input :type "password" :placeholder "Password" :class "form-control"))
-            (button :type "submit" :class "btn btn-success" (text "Sign in"))))))
+              (input :type "password" :placeholder "Password" :class "form-control" :value pw :change #(reset! pw @%)))
+            (button :type "submit" :class "btn btn-success" :click sign-in (text "Sign in"))))))
 
     (div :class "jumbotron"
       (div :class "container"
