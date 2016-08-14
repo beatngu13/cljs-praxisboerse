@@ -6,6 +6,37 @@
     (link :rel "stylesheet" :href "bootstrap-3.3.7/css/bootstrap-theme.min.css")
     (link :rel "stylesheet" :href "app.css"))
   (body
+
+    (nav :class "navbar navbar-inverse navbar-fixed-top"
+      (div :class "container"
+        (div :class "navbar-header"
+          (button :type "button" :class "navbar-toggle collapsed"
+                  :data-toggle "collapse" :data-target "#navbar"
+                  :aria-expanded "false" :aria-controls "navbar"
+                  (span :class "sr-only" (text "Toggle navigation"))
+                  (span :class "icon-bar")
+                  (span :class "icon-bar")
+                  (span :class "icon-bar"))
+          (a :class "navbar-brand" :href "#" (text "Praxisbörse")))
+        (div :id "navbar" :class "navbar-collapse collapse"
+          (form :class "navbar-form navbar-right"
+            (div :class "form-group"
+              (input :type "text" :placeholder "IZ account" :class "form-control"))
+            (div :class "form-group"
+              (input :type "password" :placeholder "Password" :class "form-control"))
+            (button :type "submit" :class "btn btn-success" (text "Sign in"))))))
+
+    (div :class "jumbotron"
+      (div :class "container"
+        (h1 (text "cljs-praxisboerse")
+        (p (text "This is a rudimentary single-page application (SPA) built with ClojureScript and Hoplon, written as
+        part of a showcase about JavaScript alternatives. Based on the User Interfaces Laboratory (winter semester
+        2015), this application provides a lightweight browser for the Praxisbörse in English language.")
+        (p (a :class "btn btn-primary btn-lg" :href "https://github.com/beatngu13/cljs-praxisboerse" :role "button" (text "View on GitHub \u00BB")))))))
+
+    (div :class "container"
+      (hr)
+      (footer (p (text "Copyright \u00A9 2016 Daniel Kraus"))))
+
     (script :src "jquery-3.1.0/jquery-3.1.0.min.js")
-    (script :src "bootstrap-3.3.7/js/bootstrap.min.js")
-    (h1 "Hello, Hoplon!")))
+    (script :src "bootstrap-3.3.7/js/bootstrap.min.js")))
