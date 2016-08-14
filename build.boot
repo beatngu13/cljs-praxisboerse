@@ -6,7 +6,9 @@
                   [hoplon/twitter-bootstrap  "0.2.0"]
                   [org.clojure/clojure       "1.8.0"]
                   [org.clojure/clojurescript "1.9.93"]
-                  [tailrecursion/boot-jetty  "0.1.3"]]
+                  [tailrecursion/boot-jetty  "0.1.3"]
+                  [org.clojure/core.async    "0.2.385"]
+                  [cljs-http                 "0.1.41"]]
   :source-paths #{"src"}
   :asset-paths  #{"assets"})
 
