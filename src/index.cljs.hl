@@ -37,19 +37,20 @@
           (a :class "navbar-brand" :href "#" (text "Praxisbörse")))
         (div :id "navbar" :class "navbar-collapse collapse"
           (form :class "navbar-form navbar-right"
-            (div :class "form-group"
+            (div :class "form-group" :style "margin-right: 5px;"
               (input :type "text" :placeholder "IZ account" :class "form-control" :value iz :change #(reset! iz @%)))
-            (div :class "form-group"
+            (div :class "form-group" :style "margin-right: 5px"
               (input :type "password" :placeholder "Password" :class "form-control" :value pw :change #(reset! pw @%)))
             (button :type "submit" :class "btn btn-success" :click sign-in (text "Sign in"))))))
 
     (div :class "jumbotron"
       (div :class "container"
-        (h1 (text "cljs-praxisboerse")
+        (h1 (text "cljs-praxisboerse"))
         (p (text "This is a rudimentary single-page application (SPA) built with ClojureScript and Hoplon, written as
         part of a showcase about JavaScript alternatives. Based on the User Interfaces Laboratory (winter semester
-        2015), this application provides a lightweight browser for the Praxisbörse in English language.")
-        (p (a :class "btn btn-primary btn-lg" :href "https://github.com/beatngu13/cljs-praxisboerse" :role "button" (text "View on GitHub \u00BB")))))))
+        2015), this application provides a lightweight browser for the Praxisbörse in English language."))
+        (p (a :class "btn btn-primary btn-lg" :href "https://github.com/beatngu13/cljs-praxisboerse" :role "button"
+              (text "View on GitHub \u00BB")))))
 
     (div :class "container"
       (hr)
