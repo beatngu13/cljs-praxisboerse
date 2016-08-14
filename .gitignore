@@ -1,4 +1,11 @@
-/.boot
-/target
-/.nrepl-port
-/.repl-history
+# Boot
+
+.boot
+.nrepl-port
+.repl-history
+target
+
+# IntelliJ
+
+.idea
+boot-project.iml
