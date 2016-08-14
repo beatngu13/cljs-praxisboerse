@@ -1,5 +1,6 @@
 (page "index.html"
-  (:require [cljs.core.async :refer [<!]]
+  (:require [hoplon.twitter.bootstrap :refer [container form-group]]
+            [cljs.core.async :refer [<!]]
             [cljs-http.client :as http])
   (:require-macros [cljs.core.async.macros :refer [go]]))
 
@@ -11,9 +12,8 @@
 (defn sign-in []
   (go (let [response (<! (http/get
                            (str rest-url "/credential/info")
-                           {:basic-auth {:username @iz :password @pw}}))
-            success  (:success response)]
-        (if success
+                           {:basic-auth {:username @iz :password @pw}}))]
+        (if (:success response)
           (print (str "Hi " (get-in response [:body :firstName]) "!"))
           (print "Invalid account and/or password.")))))
 
@@ -25,7 +25,7 @@
   (body
 
     (nav :class "navbar navbar-inverse navbar-fixed-top"
-      (div :class "container"
+      (container
         (div :class "navbar-header"
           (button :type "button" :class "navbar-toggle collapsed"
                   :data-toggle "collapse" :data-target "#navbar"
@@ -37,14 +37,14 @@
           (a :class "navbar-brand" :href "#" (text "Praxisbörse")))
         (div :id "navbar" :class "navbar-collapse collapse"
           (form :class "navbar-form navbar-right"
-            (div :class "form-group" :style "margin-right: 5px;"
+            (form-group
               (input :type "text" :placeholder "IZ account" :class "form-control" :value iz :change #(reset! iz @%)))
-            (div :class "form-group" :style "margin-right: 5px"
+            (form-group
               (input :type "password" :placeholder "Password" :class "form-control" :value pw :change #(reset! pw @%)))
             (button :type "submit" :class "btn btn-success" :click sign-in (text "Sign in"))))))
 
     (div :class "jumbotron"
-      (div :class "container"
+      (container
         (h1 (text "cljs-praxisboerse"))
         (p (text "This is a rudimentary single-page application (SPA) built with ClojureScript and Hoplon, written as
         part of a showcase about JavaScript alternatives. Based on the User Interfaces Laboratory (winter semester
@@ -52,7 +52,7 @@
         (p (a :class "btn btn-primary btn-lg" :href "https://github.com/beatngu13/cljs-praxisboerse" :role "button"
               (text "View on GitHub \u00BB")))))
 
-    (div :class "container"
+    (container
       (hr)
       (footer (p (text "Copyright \u00A9 2016 Daniel Kraus"))))
 
