@@ -1,11 +1,11 @@
 # cljs-praxisboerse
 
-A rudimentary single-page application (SPA) built with [ClojureScript](https://github.com/clojure/clojurescript) and [Hoplon](http://hoplon.io).
+A rudimentary single-page application (SPA) built with [ClojureScript](https://github.com/clojure/clojurescript) and [Hoplon](http://hoplon.io), written as part of a showcase about JavaScript alternatives.
 
 ## Dependencies
 
-- java 1.7+
-- [boot][1]
+- Java 1.7+
+- [Boot](http://boot-clj.com)
 
 ## Usage
 
@@ -21,7 +21,7 @@ A rudimentary single-page application (SPA) built with [ClojureScript](https://g
     - auto reload the html page on changes
     - Clojurescript REPL
 
-2. Go to [http://localhost:8000][2] in your browser. You should see "Hello, Hoplon!".
+2. Go to [http://localhost:8000][1] in your browser. You should see "Hello, Hoplon!".
 
 3. If you edit and save a file, the task will recompile the code and reload the
    browser to show the updated version.
@@ -38,7 +38,6 @@ A rudimentary single-page application (SPA) built with [ClojureScript](https://g
 
 ## License
 
-Copyright © 2016, Daniel Kraus
+Copyright © 2016 Daniel Kraus
 
-[1]: http://boot-clj.com
-[2]: http://localhost:8000
+[1]: http://localhost:8000
