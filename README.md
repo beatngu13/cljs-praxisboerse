@@ -1,6 +1,6 @@
 # cljs-praxisboerse
 
-A [Hoplon][3] project designed to...well, that part is up to you.
+A rudimentary single-page application (SPA) built with [ClojureScript](https://github.com/clojure/clojurescript) and [Hoplon](http://hoplon.io).
 
 ## Dependencies
 
@@ -8,7 +8,9 @@ A [Hoplon][3] project designed to...well, that part is up to you.
 - [boot][1]
 
 ## Usage
+
 ### Development
+
 1. Start the `dev` task. In a terminal run:
     ```bash
     $ boot dev
@@ -25,6 +27,7 @@ A [Hoplon][3] project designed to...well, that part is up to you.
    browser to show the updated version.
 
 ### Production
+
 1. Run the `prod` task. In a terminal run:
     ```bash
     $ boot prod
@@ -35,8 +38,7 @@ A [Hoplon][3] project designed to...well, that part is up to you.
 
 ## License
 
-Copyright © 2016, **Your Name Goes Here**
+Copyright © 2016, Daniel Kraus
 
 [1]: http://boot-clj.com
 [2]: http://localhost:8000
-[3]: http://hoplon.io
