@@ -22,7 +22,7 @@
                   (span :class "icon-bar")
                   (span :class "icon-bar")
                   (span :class "icon-bar"))
-          (a :class "navbar-brand" :href "#" (text "Praxisbörse")))
+          (a :class "navbar-brand" :href "http://www.iwi.hs-karlsruhe.de/boerse" (text "Praxisbörse")))
         (div :id "navbar" :class "navbar-collapse collapse"
           (form :class "navbar-form navbar-right"
             (form-group
@@ -37,7 +37,7 @@
         (p (text "This is a rudimentary single-page application (SPA) built with ClojureScript and Hoplon, written as
         part of a showcase about JavaScript alternatives. Based on the User Interfaces Laboratory (winter semester
         2015), this application provides a lightweight browser for the Praxisbörse in English language."))
-        (p (a :class "btn btn-primary btn-lg" :href "https://github.com/beatngu13/cljs-praxisboerse" :role "button"
+        (p (a :class "btn btn-primary btn-lg" :href "https://www.github.com/beatngu13/cljs-praxisboerse" :role "button"
               (text "View on GitHub \u00BB")))))
 
     (container
