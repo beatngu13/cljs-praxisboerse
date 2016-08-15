@@ -4,24 +4,22 @@
   (:require-macros [cljs.core.async.macros :refer [go]]))
 
 (def base-url "https://www.iwi.hs-karlsruhe.de/Intranetaccess/REST")
-(def credentials (atom {:iz "", :pw ""}))
+(def credentials (atom {:username "", :password ""}))
 
 (defn fetch-offer-types! []
-  (go (let [c        @credentials
-            response (<! (http/get
+  (go (let [response (<! (http/get
                            (str base-url "/joboffer/offertypes/all")
-                           {:basic-auth {:username (:iz c) :password (:pw c)}}))]
+                           {:basic-auth @credentials}))]
         (print (map :name (:body response))))))
 
 (defn fetch-offers-by-type! [type]
-  (go (let [c        @credentials
-            response (<! (http/get
+  (go (let [response (<! (http/get
                            (str base-url "/joboffer/offers/" type "/0/-1")
-                           {:basic-auth {:username (:iz c) :password (:pw c)}}))]
+                           {:basic-auth @credentials}))]
         (print response))))
 
 (defn init! [iz pw]
-  (swap! credentials assoc :iz iz :pw pw))
+  (swap! credentials assoc :username iz :password pw))
 
 (defn sign-in! [iz pw]
   (go (let [response (<! (http/get
