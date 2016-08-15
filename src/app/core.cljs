@@ -16,7 +16,7 @@
   (go (let [response (<! (http/get
                            (str base-url "/joboffer/offers/" type "/0/-1")
                            {:basic-auth @credentials}))]
-        (print response))))
+        (print (map :shortDescription (get-in response [:body :offers]))))))
 
 (defn init! [iz pw]
   (swap! credentials assoc :username iz :password pw))
