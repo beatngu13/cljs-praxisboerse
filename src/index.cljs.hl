@@ -53,6 +53,7 @@
                 (input :type "password" :placeholder "Password" :class "form-control" :value pw :change #(reset! pw @%)))
               (button :type "submit" :class "btn btn-success" :click #(sign-in! @iz @pw com) (text "Sign in")))))))
 
+    (div :class "bg")
     (div :class "jumbotron"
       (container
         (h1 "cljs-praxisboerse")
