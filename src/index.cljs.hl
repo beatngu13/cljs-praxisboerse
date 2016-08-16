@@ -47,7 +47,9 @@
 
     (container
       (h2 "Current Opportunities")
-      (p "Please sign in to see content."))
+      (if-tpl signed-in?
+        (p "Under construction.")
+        (p "Please sign in to see content.")))
 
     (container
       (hr)
