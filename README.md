@@ -1,6 +1,12 @@
 # cljs-praxisboerse
 
-A rudimentary single-page application (SPA) built with [ClojureScript](https://github.com/clojure/clojurescript) and [Hoplon](http://hoplon.io), written as part of a showcase about JavaScript alternatives. Checkout the result at https://beatngu13.github.io/cljs-praxisboerse.
+A rudimentary single-page application (SPA) built with [ClojureScript](https://github.com/clojure/clojurescript) and [Hoplon](http://hoplon.io), written as part of a showcase about JavaScript alternatives. Further ingredients are:
+
+- [Bootstrap](http://getbootstrap.com/)
+- [core.async](https://github.com/clojure/core.async)
+- [cljs-http](https://github.com/r0man/cljs-http)
+
+Checkout the result at https://beatngu13.github.io/cljs-praxisboerse.
 
 ## Dependencies
 
