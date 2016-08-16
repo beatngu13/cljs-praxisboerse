@@ -5,7 +5,7 @@
 (defc iz "")
 (defc pw "")
 
-(defc= signed-in? false)
+(defc signed-in? false)
 
 (html
   (head
