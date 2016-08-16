@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: hoplon/twitter-bootstrap:0.2.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/hoplon/twitter-bootstrap/0.2.0/twitter-bootstrap-0.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
