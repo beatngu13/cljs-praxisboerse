@@ -37,20 +37,20 @@
 
     (div :class "jumbotron"
       (container
-        (h1 (text "cljs-praxisboerse"))
-        (p (text "This is a rudimentary single-page application (SPA) built with ClojureScript and Hoplon, written as
-        part of a showcase about JavaScript alternatives. Based on the User Interfaces Laboratory (winter semester
-        2015), this application provides a lightweight browser for the Praxisbörse in English language."))
+        (h1 "cljs-praxisboerse")
+        (p "This is a rudimentary single-page application (SPA) built with ClojureScript and Hoplon, written as part of
+           a showcase about JavaScript alternatives. Based on the User Interfaces Laboratory (winter semester 2015),
+           this application provides a lightweight browser for the Praxisbörse in English language.")
         (p (a :class "btn btn-primary btn-lg" :href "https://www.github.com/beatngu13/cljs-praxisboerse" :role "button"
               (text "View on GitHub \u00BB")))))
 
     (container
-      (h2 (text "Current Opportunities"))
-      (p (text "Please sign in to see content.")))
+      (h2 "Current Opportunities")
+      (p "Please sign in to see content."))
 
     (container
       (hr)
-      (footer (p (text "Copyright \u00A9 2016 Daniel Kraus"))))
+      (footer (p "Copyright \u00A9 2016 Daniel Kraus")))
 
     (script :src "jquery-3.1.0/jquery-3.1.0.min.js")
     (script :src "bootstrap-3.3.7/js/bootstrap.min.js")))
