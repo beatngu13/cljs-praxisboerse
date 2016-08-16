@@ -1,5 +1,5 @@
 (page "index.html"
-  (:require [app.core :refer [sign-in!]]
+  (:require [cljs-praxisboerse.core :refer [sign-in!]]
             [hoplon.twitter.bootstrap :refer [container form-group]]))
 
 (defc iz "")

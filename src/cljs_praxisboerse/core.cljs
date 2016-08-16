@@ -1,4 +1,4 @@
-(ns app.core
+(ns cljs-praxisboerse.core
   (:require [cljs.core.async :refer [<!]]
             [cljs-http.client :as http])
   (:require-macros [cljs.core.async.macros :refer [go]]))
