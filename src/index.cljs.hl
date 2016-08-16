@@ -26,14 +26,15 @@
                   (span :class "icon-bar"))
           (a :class "navbar-brand" :href "http://www.iwi.hs-karlsruhe.de/boerse" (text "Praxisbörse")))
         (div :id "navbar" :class "navbar-collapse collapse"
-          (form :class "navbar-form navbar-right" :toggle (cell= (not signed-in?))
-            (form-group
-              (input :type "text" :placeholder "IZ account" :class "form-control" :value iz :change #(reset! iz @%)))
-            (form-group
-              (input :type "password" :placeholder "Password" :class "form-control" :value pw :change #(reset! pw @%)))
-            (button :type "submit" :class "btn btn-success" :click #(sign-in! @iz @pw) (text "Sign in")))
-          (div :toggle signed-in?
-            (p :class "navbar-text pull-right" (text "Hi, John!"))))))
+          (if-tpl signed-in?
+            (div
+              (p :class "navbar-text pull-right" (text "Hi, John!")))
+            (form :class "navbar-form navbar-right"
+              (form-group
+                (input :type "text" :placeholder "IZ account" :class "form-control" :value iz :change #(reset! iz @%)))
+              (form-group
+                (input :type "password" :placeholder "Password" :class "form-control" :value pw :change #(reset! pw @%)))
+              (button :type "submit" :class "btn btn-success" :click #(sign-in! @iz @pw) (text "Sign in")))))))
 
     (div :class "jumbotron"
       (container
