@@ -21,12 +21,10 @@
 (defn init! [iz pw]
   (swap! credentials assoc :username iz :password pw))
 
-(defn sign-in! [iz pw]
+(defn sign-in! [iz pw com]
   (go (let [response (<! (http/get
                            (str base-url "/credential/info")
                            {:basic-auth {:username iz :password pw}}))]
-        (if (:success response)
-          (do
-            (init! iz pw)
-            (print (str "Hi " (get-in response [:body :firstName]) "!")))
-          (print "Invalid account and/or password.")))))
+        (>! com {:topic :sign-in :content (when (:success response)
+                                            (init! iz pw)
+                                            {:firstName (get-in response [:body :firstName])})}))))
