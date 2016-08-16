@@ -9,7 +9,7 @@
 (defc first-name "")
 (defc signed-in? false)
 
-(defn handle-sign-in [content]
+(defn handle-sign-in! [content]
   (when (not (nil? content))
     (reset! first-name (:firstName content))
     (reset! signed-in? true))
@@ -21,7 +21,7 @@
   (let [msg (<! com)
         c   (:content msg)]
     (case (:topic msg)
-      :sign-in (handle-sign-in c))
+      :sign-in (handle-sign-in! c))
     (recur)))
 
 (html
