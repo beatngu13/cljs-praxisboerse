@@ -9,6 +9,8 @@
 (defc first-name "")
 (defc signed-in? false)
 
+(defc= invalid-iz? (nil? (re-matches #"^$|[a-z]{4}\d{4}" iz)))
+
 (defn handle-sign-in! [content]
   (when (not (nil? content))
     (reset! first-name (:firstName content))
@@ -48,8 +50,10 @@
               (p :class "navbar-text pull-right" (text "Hi, ~{first-name}!")))
             (form :class "navbar-form navbar-right"
               (form-group :css {:margin-right "5px"}
+                          :class (cell= {:has-error invalid-iz?})
                 (input :type "text" :placeholder "IZ account" :class "form-control" :value iz :change #(reset! iz @%)))
               (form-group :css {:margin-right "5px"}
+                          :class (cell= {:has-error invalid-iz?})
                 (input :type "password" :placeholder "Password" :class "form-control" :value pw :change #(reset! pw @%)))
               (button :type "submit" :class "btn btn-success" :click #(sign-in! @iz @pw com) (text "Sign in")))))))
 
