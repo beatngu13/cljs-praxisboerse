@@ -55,7 +55,8 @@
               (form-group :css {:margin-right "5px"}
                           :class (cell= {:has-error invalid-iz?})
                 (input :type "password" :placeholder "Password" :class "form-control" :value pw :change #(reset! pw @%)))
-              (button :type "submit" :class "btn btn-success" :click #(sign-in! @iz @pw com) (text "Sign in")))))))
+              (button :type "submit" :class "btn btn-success" :disabled invalid-iz? :click #(sign-in! @iz @pw com)
+                (text "Sign in")))))))
 
     (div :class "jumbotron"
       (container
