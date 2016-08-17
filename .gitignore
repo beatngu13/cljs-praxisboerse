@@ -2,7 +2,7 @@
 
 .boot
 .nrepl-port
-.repl-history
+.nrepl-history
 target
 
 # IntelliJ
