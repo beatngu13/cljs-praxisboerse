@@ -10,9 +10,10 @@
 (def pw (cell ""))
 (def first-name (cell ""))
 (def offer-types (cell '()))
+(def countries (cell '()))
 
-(def signed-in? (cell= (not (string/blank? first-name))))
 (def invalid-iz? (cell= (nil? (re-matches #"^$|[a-z]{4}\d{4}" iz))))
+(def signed-in? (cell= (not (string/blank? first-name))))
 
 (def base-url "https://www.iwi.hs-karlsruhe.de/Intranetaccess/REST")
 
@@ -33,5 +34,7 @@
                            (str base-url "/credential/info")
                            {:basic-auth {:username @iz :password @pw}}))]
         (if (:success response)
-          (reset! first-name (get-in response [:body :firstName]))
+          (do
+            (fetch-offer-types!)
+            (reset! first-name (get-in response [:body :firstName])))
           (reset! pw "")))))

@@ -1,5 +1,5 @@
 (page "index.html"
-  (:require [cljs-praxisboerse.core :refer [iz pw first-name invalid-iz? signed-in? sign-in!]]
+  (:require [cljs-praxisboerse.core :refer [iz pw first-name offer-types countries invalid-iz? signed-in? sign-in!]]
             [hoplon.twitter.bootstrap :refer [container form-group]]))
 
 (defelem dropdown-menu [_ children]
@@ -57,14 +57,16 @@
                 (button :type "button" :class "btn btn-default dropdown-toggle" :data-toggle "dropdown"
                         :aria-haspopup "true" :aria-expanded "false"
                   (text "Bitte wählen") (span :class "caret"))
-                (dropdown-menu '("Foo" "Bar" "Baz"))))
+                (if-tpl (cell= (not (empty? offer-types)))
+                  (dropdown-menu @offer-types))))
             (form-group
               (label :for "inputCountry" (text "Land"))
               (div :class "btn-group" :id "inputCountry"
                 (button :type "button" :class "btn btn-default dropdown-toggle" :data-toggle "dropdown"
                         :aria-haspopup "true" :aria-expanded "false"
-                  (text "Bitte wählen") (span :class "caret"))
-                (dropdown-menu '("Foo" "Bar" "Baz"))))
+                  (text "Weltweit") (span :class "caret"))
+                (if-tpl (cell= (not (empty? offer-types)))
+                  (dropdown-menu @countries))))
             (form-group
               (label :for "inputFilter" (text "Filter"))
               (input :type "text" :class "form-control" :placeholder "z. B. ClojureScript" :id "inputFilter")))
