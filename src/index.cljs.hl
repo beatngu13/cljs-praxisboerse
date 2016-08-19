@@ -2,6 +2,10 @@
   (:require [cljs-praxisboerse.core :refer [iz pw first-name invalid-iz? signed-in? sign-in!]]
             [hoplon.twitter.bootstrap :refer [container form-group]]))
 
+(defelem dropdown-menu [_ children]
+  (ul :class "dropdown-menu"
+    (map li children)))
+
 (html
   (head
     (link :rel "stylesheet" :href "bootstrap-3.3.7/css/bootstrap.min.css")
@@ -53,20 +57,14 @@
                 (button :type "button" :class "btn btn-default dropdown-toggle" :data-toggle "dropdown"
                         :aria-haspopup "true" :aria-expanded "false"
                   (text "Bitte wählen") (span :class "caret"))
-                (ul :class "dropdown-menu"
-                  (li "Foo")
-                  (li "Bar")
-                  (li "Baz"))))
+                (dropdown-menu '("Foo" "Bar" "Baz"))))
             (form-group
               (label :for "inputCountry" (text "Land"))
               (div :class "btn-group" :id "inputCountry"
                 (button :type "button" :class "btn btn-default dropdown-toggle" :data-toggle "dropdown"
                         :aria-haspopup "true" :aria-expanded "false"
                   (text "Bitte wählen") (span :class "caret"))
-                (ul :class "dropdown-menu"
-                  (li "Foo")
-                  (li "Bar")
-                  (li "Baz"))))
+                (dropdown-menu '("Foo" "Bar" "Baz"))))
             (form-group
               (label :for "inputFilter" (text "Filter"))
               (input :type "text" :class "form-control" :placeholder "z. B. ClojureScript" :id "inputFilter")))
