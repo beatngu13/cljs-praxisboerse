@@ -1,30 +1,6 @@
 (page "index.html"
-  (:require [cljs-praxisboerse.core :refer [sign-in!]]
-            [cljs.core.async :refer [<! chan]]
-            [hoplon.twitter.bootstrap :refer [container form-group]])
-  (:require-macros [cljs.core.async.macros :refer [go-loop]]))
-
-(defc iz "")
-(defc pw "")
-(defc first-name "")
-(defc signed-in? false)
-
-(defc= invalid-iz? (nil? (re-matches #"^$|[a-z]{4}\d{4}" iz)))
-
-(defn handle-sign-in! [content]
-  (when (not (nil? content))
-    (reset! first-name (:firstName content))
-    (reset! signed-in? true))
-  (reset! pw ""))
-
-(def com (chan))
-
-(go-loop []
-  (let [msg (<! com)
-        c   (:content msg)]
-    (case (:topic msg)
-      :sign-in (handle-sign-in! c))
-    (recur)))
+  (:require [cljs-praxisboerse.core :refer [iz pw first-name invalid-iz? signed-in? sign-in!]]
+            [hoplon.twitter.bootstrap :refer [container form-group]]))
 
 (html
   (head
@@ -55,7 +31,7 @@
               (form-group :css {:margin-right "5px"}
                           :class (cell= {:has-error invalid-iz?})
                 (input :type "password" :placeholder "Password" :class "form-control" :value pw :change #(reset! pw @%)))
-              (button :type "submit" :class "btn btn-success" :disabled invalid-iz? :click #(sign-in! @iz @pw com)
+              (button :type "submit" :class "btn btn-success" :disabled invalid-iz? :click sign-in!
                 (text "Sign in")))))))
 
     (div :class "jumbotron"
