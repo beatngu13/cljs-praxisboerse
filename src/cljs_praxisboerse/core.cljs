@@ -4,15 +4,15 @@
             [cljs.core.async :refer [<!]]
             [javelin.core :refer [cell]])
   (:require-macros [cljs.core.async.macros :refer [go]]
-                   [javelin.core :refer [cell= defc defc=]]))
+                   [javelin.core :refer [cell=]]))
 
-(defc iz "")
-(defc pw "")
-(defc first-name "")
-(defc offer-types '())
+(def iz (cell ""))
+(def pw (cell ""))
+(def first-name (cell ""))
+(def offer-types (cell '()))
 
-(defc= signed-in? (not (string/blank? first-name)))
-(defc= invalid-iz? (nil? (re-matches #"^$|[a-z]{4}\d{4}" iz)))
+(def signed-in? (cell= (not (string/blank? first-name))))
+(def invalid-iz? (cell= (nil? (re-matches #"^$|[a-z]{4}\d{4}" iz))))
 
 (def base-url "https://www.iwi.hs-karlsruhe.de/Intranetaccess/REST")
 
