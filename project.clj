@@ -1,5 +1,5 @@
 (defproject
-  boot-project
+  cljs-praxisboerse
   "0.1.0-SNAPSHOT"
   :dependencies
   [[adzerk/boot-cljs "1.7.228-1"]
@@ -12,5 +12,8 @@
    [tailrecursion/boot-jetty "0.1.3"]
    [org.clojure/core.async "0.2.385"]
    [cljs-http "0.1.41"]]
+  :repositories
+  [["clojars" {:url "https://clojars.org/repo/"}]
+   ["maven-central" {:url "https://repo1.maven.org/maven2"}]]
   :source-paths
   ["src"])
