@@ -20,29 +20,30 @@
                   (span :class "icon-bar")
                   (span :class "icon-bar"))
           (a :class "navbar-brand" :href "http://www.iwi.hs-karlsruhe.de/boerse" (text "Praxisbörse")))
-        (div :id "navbar" :class "navbar-collapse collapse"
+        (div :class "navbar-collapse collapse" :id "navbar"
           (if-tpl signed-in?
             (div
               (p :class "navbar-text pull-right" (text "Hi, ~{first-name}!")))
             (form :class "navbar-form navbar-right"
               (form-group :class (cell= {:has-error invalid-iz?})
-                (input :type :text :placeholder "IZ account" :class "form-control" :value iz :change #(reset! iz @%)))
+                (input :type "test" :placeholder "IZ-Kürzel" :class "form-control" :value iz :change #(reset! iz @%)))
               (form-group :class (cell= {:has-error invalid-iz?})
-                (input :type :password :placeholder "Password" :class "form-control" :value pw :change #(reset! pw @%)))
+                (input :type "password" :placeholder "Passwort" :class "form-control" :value pw :change #(reset! pw @%)))
               (button :type "submit" :class "btn btn-success" :disabled invalid-iz? :click sign-in!
-                (text "Sign in")))))))
+                (text "Einloggen")))))))
 
     (div :class "jumbotron"
       (container
         (h1 "cljs-praxisboerse")
-        (p "This is a rudimentary single-page application (SPA) built with ClojureScript and Hoplon, written as part of
-           a showcase about JavaScript alternatives. Based on the User Interfaces Laboratory (winter semester 2015),
-           this application provides a lightweight browser for the Praxisbörse in English language.")
+        (p "Dies ist eine rudimentäre Single-Page Application (SPA) entwickelt mit ClojureScript und Hoplon. Sie dient
+            dem Vergleich derzeit verfügbarer JavaScript-Alternativen und basiert auf dem Benutzungsoberflächen Labor
+            aus dem Wintersemester 2015. Bereitgestellt wird ein leichtgewichtiger Browser für die Praxisbörse, welcher
+            keinen VPN-Zugriff erfordert.")
         (p (a :class "btn btn-primary btn-lg" :href "https://www.github.com/beatngu13/cljs-praxisboerse" :role "button"
-              (text "View on GitHub \u00BB")))))
+              (text "Auf GitHub anschauen \u00BB")))))
 
     (container
-      (h2 "Current Opportunities")
+      (h2 "Aktuelle Angebote")
       (if-tpl signed-in?
         (div
           (form :class "form-inline"
@@ -68,11 +69,11 @@
                   (li "Baz"))))
             (form-group
               (label :for "inputFilter" (text "Filter"))
-              (input :type :text :class "form-control" :id "inputFilter" :placeholder "z. B. ClojureScript")))
+              (input :type "text" :class "form-control" :placeholder "z. B. ClojureScript" :id "inputFilter")))
           (ul :class "list-group"
             (li :class "list-group-item active" (text "Ergebnisse"))
-            (li :class "list-group-item" (text "Aktuell sind keine Angebot verfügbar!"))))
-        (p "Please sign in to see content.")))
+            (li :class "list-group-item" (text "Aktuell sind leider keine passenden Angebot verfügbar."))))
+        (p "Bitte logge dich ein, um aktuelle Angebote einzusehen.")))
 
     (container
       (hr)
