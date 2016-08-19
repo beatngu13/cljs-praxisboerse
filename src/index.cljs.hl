@@ -46,7 +46,34 @@
     (container
       (h2 "Current Opportunities")
       (if-tpl signed-in?
-        (p "Under construction.")
+        (div
+          (form :class "form-inline"
+            (form-group
+              (label :for "inputOfferType" (text "Angebotsart"))
+              (div :class "btn-group" :id "inputOfferType"
+                (button :type "button" :class "btn btn-default dropdown-toggle" :data-toggle "dropdown"
+                        :aria-haspopup "true" :aria-expanded "false"
+                  (text "Bitte wählen") (span :class "caret"))
+                (ul :class "dropdown-menu"
+                  (li "Foo")
+                  (li "Bar")
+                  (li "Baz"))))
+            (form-group
+              (label :for "inputCountry" (text "Land"))
+              (div :class "btn-group" :id "inputCountry"
+                (button :type "button" :class "btn btn-default dropdown-toggle" :data-toggle "dropdown"
+                        :aria-haspopup "true" :aria-expanded "false"
+                  (text "Bitte wählen") (span :class "caret"))
+                (ul :class "dropdown-menu"
+                  (li "Foo")
+                  (li "Bar")
+                  (li "Baz"))))
+            (form-group
+              (label :for "inputFilter" (text "Filter"))
+              (input :type :text :class "form-control" :id "inputFilter" :placeholder "z. B. ClojureScript")))
+          (ul :class "list-group"
+            (li :class "list-group-item active" (text "Ergebnisse"))
+            (li :class "list-group-item" (text "Aktuell sind keine Angebot verfügbar!"))))
         (p "Please sign in to see content.")))
 
     (container
