@@ -1,10 +1,7 @@
 (page "index.html"
   (:require [cljs-praxisboerse.core :refer [iz pw name offer-types countries invalid-iz? signed-in? sign-in!]]
+            [cljs-praxisboerse.templates :refer [dropdown-menu]]
             [hoplon.twitter.bootstrap :refer [container form-group]]))
-
-(defelem dropdown-menu [_ children]
-  (ul :class "dropdown-menu"
-    (map li children)))
 
 (html
   (head
