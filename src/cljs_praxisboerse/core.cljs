@@ -21,7 +21,7 @@
   (go (let [response (<! (http/get
                            (str base-url "/joboffer/offertypes/all")
                            {:basic-auth {:username @iz :password @pw}}))]
-        (reset! offer-types (map :name (:body response))))))
+        (swap! offer-types conj (map :name (:body response))))))
 
 (defn fetch-offers-by-type! [type]
   (go (let [response (<! (http/get
