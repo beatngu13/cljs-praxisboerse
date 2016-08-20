@@ -1,5 +1,5 @@
 (page "index.html"
-  (:require [cljs-praxisboerse.core :refer [iz pw name offer-types countries invalid-iz? signed-in? sign-in!]]
+  (:require [cljs-praxisboerse.core :refer [iz pw first-name offer-types countries invalid-iz? signed-in? sign-in!]]
             [cljs-praxisboerse.templates :refer [dropdown-menu]]
             [hoplon.twitter.bootstrap :refer [container form-group]]))
 
@@ -23,7 +23,7 @@
           (a :class "navbar-brand" :href "http://www.iwi.hs-karlsruhe.de/boerse" (text "Praxisbörse")))
         (div :class "navbar-collapse collapse" :id "navbar"
           (if-tpl signed-in?
-            (p :class "navbar-text pull-right" (text "Hi, ~{name}!"))
+            (p :class "navbar-text pull-right" (text "Hi, ~{first-name}!"))
             (form :class "navbar-form navbar-right"
               (form-group :class (cell= {:has-error invalid-iz?})
                 (input :type "test" :placeholder "IZ-Kürzel" :class "form-control" :value iz :change #(reset! iz @%)))
