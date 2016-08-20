@@ -34,7 +34,8 @@
                            (str base-url "/credential/info")
                            {:basic-auth {:username @iz :password @pw}}))]
         (if (:success response)
-          (do
-            (fetch-offer-types!)
-            (reset! first-name (get-in response [:body :firstName])))
+          (reset! first-name (get-in response [:body :firstName]))
           (reset! pw "")))))
+
+(add-watch signed-in? :sign-in-watch (fn [_ _ _ new-state]
+                                       (if (true? new-state) (fetch-offer-types!))))
