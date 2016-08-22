@@ -75,5 +75,5 @@
       (hr)
       (footer (p "Copyright \u00A9 2016 Daniel Kraus")))
 
-    (script :src "jquery-3.1.0/jquery-3.1.0.min.js")
+    (script :src "jquery-1.9.1/jquery-1.9.1.min.js")
     (script :src "bootstrap-3.3.7/js/bootstrap.min.js")))
