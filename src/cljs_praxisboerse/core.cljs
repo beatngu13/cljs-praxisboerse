@@ -14,6 +14,7 @@
 (def countries (cell '()))
 (def offer-type-input (cell ""))
 (def country-input (cell "Weltweit"))
+(def query-result (cell '()))
 
 (def invalid-iz? (cell= (nil? (re-matches #"^$|[a-z]{4}\d{4}" iz))))
 (def signed-in? (cell= (not= "" first-name)))
@@ -22,7 +23,7 @@
   (go (let [response (<! (http/get
                            (str base-url "/joboffer/offers/" @offer-type-input "/0/-1")
                            {:basic-auth {:username @iz :password @pw}}))]
-        (print (map :shortDescription (get-in response [:body :offers]))))))
+        (reset! query-result (map :shortDescription (get-in response [:body :offers]))))))
 
 (defn fetch-offer-types! []
   (go (let [response (<! (http/get

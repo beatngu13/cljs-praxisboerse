@@ -1,5 +1,5 @@
 (page "index.html"
-  (:require [cljs-praxisboerse.core :refer [iz pw first-name offer-types countries offer-type-input country-input invalid-iz? signed-in? sign-in!]]
+  (:require [cljs-praxisboerse.core :refer [iz pw first-name offer-types countries offer-type-input country-input query-result invalid-iz? signed-in? sign-in!]]
             [cljs-praxisboerse.templates :refer [dropdown-menu]]
             [hoplon.twitter.bootstrap :refer [container form-group]]))
 
@@ -64,7 +64,9 @@
               (input :type "text" :class "form-control" :placeholder "z. B. ClojureScript" :id "inputFilter")))
           (ul :class "list-group"
             (li :class "list-group-item active" (text "Ergebnisse"))
-            (li :class "list-group-item" (text "Aktuell sind leider keine passenden Angebote vorhanden."))))
+            (if-tpl (cell= (seq query-result))
+              (map #(li :class "list-group-item" (text %)) @query-result)
+              (li :class "list-group-item" (text "Aktuell sind leider keine passenden Angebote vorhanden.")))))
         (p "Bitte logge dich ein, um aktuelle Angebote einzusehen.")))
 
     (container
