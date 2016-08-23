@@ -1,6 +1,5 @@
 (ns cljs-praxisboerse.core
-  (:require [clojure.string :as string]
-            [cljs-http.client :as http]
+  (:require [cljs-http.client :as http]
             [cljs.core.async :refer [<!]]
             [javelin.core :refer [cell]])
   (:require-macros [cljs.core.async.macros :refer [go]]
@@ -15,7 +14,7 @@
 (def countries (cell '()))
 
 (def invalid-iz? (cell= (nil? (re-matches #"^$|[a-z]{4}\d{4}" iz))))
-(def signed-in? (cell= (not (string/blank? first-name))))
+(def signed-in? (cell= (not= "" first-name)))
 
 (def base-url "https://www.iwi.hs-karlsruhe.de/Intranetaccess/REST")
 
