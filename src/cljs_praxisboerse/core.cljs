@@ -6,6 +6,8 @@
   (:require-macros [cljs.core.async.macros :refer [go]]
                    [javelin.core :refer [cell=]]))
 
+(def ^:private base-url "https://www.iwi.hs-karlsruhe.de/Intranetaccess/REST")
+
 (def iz (cell ""))
 (def pw (cell ""))
 (def first-name (cell ""))
