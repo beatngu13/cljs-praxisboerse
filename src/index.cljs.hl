@@ -50,12 +50,13 @@
             (form-group
               (label :for "offerTypeInput" (text "Angebotsart"))
               (select :class "form-control" :value offer-type-input
-                      :change #(reset! offer-type-input (.val (js/jQuery (.-target %)))) :id "offerTypeInput"
+                      :change #(reset! offer-type-input (.val (js/jQuery (.-target %)))) :id "offerTypeInput" ; TODO Why leads @% to an error?
                 (if-tpl (cell= (seq offer-types))
                   (map #(option :value (:shortname %) (text (:name %))) @offer-types))))
             (form-group
               (label :for "countryInput" (text "Land"))
-              (select :class "form-control" :id "countryInput"
+              (select :class "form-control" :value country-input
+                      :change #(reset! country-input (.val (js/jQuery (.-target %)))) :id "countryInput" ; TODO Why leads @% to an error?
                 (if-tpl (cell= (seq countries))
                   (map option @countries))))
             (form-group
