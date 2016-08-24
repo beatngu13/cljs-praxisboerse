@@ -30,15 +30,18 @@
                            (str base-url "/joboffer/offertypes/all")
                            {:basic-auth {:username @iz :password @pw}}))]
         (swap! offer-types concat (map #(select-keys % [:shortname :name]) (:body response)))
-        (swap! offer-type-input #(:shortname (first @offer-types)))
-        (fetch-offers-by-type!))))
+        (swap! offer-type-input #(:shortname (first @offer-types))))))
 
 (defn sign-in! []
   (go (let [response (<! (http/get
                            (str base-url "/credential/info")
                            {:basic-auth {:username @iz :password @pw}}))]
         (if (:success response)
-          (do
-            (reset! first-name (get-in response [:body :firstName]))
-            (fetch-offer-types!))
+          (reset! first-name (get-in response [:body :firstName]))
           (reset! pw "")))))
+
+(add-watch signed-in? :fetch-offer-types (fn [_ _ _ new-state]
+                                           (if (true? new-state) (fetch-offer-types!))))
+
+(add-watch offer-type-input :fetch-offers-by-type (fn [_ _ old-state new-state]
+                                                    (if (not= old-state new-state) (fetch-offers-by-type!))))
