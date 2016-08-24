@@ -1,5 +1,6 @@
 (page "index.html"
-  (:require [cljs-praxisboerse.core :refer [iz pw first-name offer-types countries offer-type-input country-input query-result invalid-iz? signed-in? sign-in!]]
+  (:require [cljs-praxisboerse.core :refer [iz pw first-name offer-types countries offer-type-input country-input
+                                            query-result invalid-iz? signed-in? sign-in!]]
             [cljs-praxisboerse.templates :refer [dropdown-menu]]
             [hoplon.twitter.bootstrap :refer [container form-group]]))
 
@@ -50,13 +51,15 @@
             (form-group
               (label :for "offerTypeInput" (text "Angebotsart"))
               (select :class "form-control" :value offer-type-input
-                      :change #(reset! offer-type-input (.val (js/jQuery (.-target %)))) :id "offerTypeInput" ; TODO Why leads @% to an error?
+                      ;; TODO Why leads @% to an error?
+                      :change #(reset! offer-type-input (.val (js/jQuery (.-target %)))) :id "offerTypeInput"
                 (if-tpl (cell= (seq offer-types))
                   (map #(option :value (:shortname %) (text (:name %))) @offer-types))))
             (form-group
               (label :for "countryInput" (text "Land"))
               (select :class "form-control" :value country-input
-                      :change #(reset! country-input (.val (js/jQuery (.-target %)))) :id "countryInput" ; TODO Why leads @% to an error?
+                      ;; TODO Why leads @% to an error?
+                      :change #(reset! country-input (.val (js/jQuery (.-target %)))) :id "countryInput"
                 (if-tpl (cell= (seq countries))
                   (map option @countries))))
             (form-group
@@ -64,6 +67,7 @@
               (input :type "text" :class "form-control" :placeholder "z. B. ClojureScript" :id "inputFilter")))
           (ul :class "list-group"
             (li :class "list-group-item active" (text "Ergebnisse"))
+            ;; FIXME Should update when query-result changes (use case or cond).
             (if-tpl (cell= (seq query-result))
               (map #(li :class "list-group-item" (text %)) @query-result)
               (li :class "list-group-item" (text "Aktuell sind leider keine passenden Angebote vorhanden.")))))
