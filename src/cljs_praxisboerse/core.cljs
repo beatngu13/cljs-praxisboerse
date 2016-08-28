@@ -15,7 +15,7 @@
 (def offer-type-input (cell ""))
 (def country-input (cell ""))
 (def filter-input (cell ""))
-(def query-result (cell '()))
+(def query (cell '()))
 
 (def invalid-iz? (cell= (nil? (re-matches #"^$|[a-z]{4}\d{4}" iz))))
 (def signed-in? (cell= (not= "" first-name)))
@@ -25,7 +25,7 @@
                            (str base-url "/joboffer/offers/" @offer-type-input "/0/-1")
                            {:basic-auth {:username @iz :password @pw}}))]
         (reset! countries (map #(select-keys % [:code :name]) (vals (get-in response [:body :countries]))))
-        (reset! query-result (map :shortDescription (get-in response [:body :offers]))))))
+        (reset! query (select-keys (:body response) [:companies :offers])))))
 
 (defn fetch-offer-types! []
   (go (let [response (<! (http/get
