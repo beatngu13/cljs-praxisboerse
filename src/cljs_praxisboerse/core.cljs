@@ -22,7 +22,7 @@
 
 (defn fetch-offers! []
   (go (let [response (<! (http/get
-                           (str base-url "/joboffer/offers/" @offer-type-input "/0/-1")
+                           (str base-url "/joboffer/offers/" @offer-type-input "/" @filter-input "/0/-1")
                            {:basic-auth {:username @iz :password @pw}}))]
         (reset! countries (map #(select-keys % [:code :name]) (vals (get-in response [:body :countries]))))
         (reset! query (select-keys (:body response) [:companies :offers])))))
@@ -45,6 +45,9 @@
 (add-watch signed-in? :fetch-offer-types (fn [_ _ _ new-state]
                                            (if (true? new-state) (fetch-offer-types!))))
 
-;; TODO Should watch country-input and filter-input as well.
-(add-watch offer-type-input :fetch-offers-by-type (fn [_ _ old-state new-state]
-                                                    (if (not= old-state new-state) (fetch-offers!))))
+(defn fetch-offers? [_ _ old-state new-state]
+  (if (not= old-state new-state) (fetch-offers!)))
+
+(add-watch offer-type-input :fetch-offers fetch-offers?)
+(add-watch country-input :fetch-offers fetch-offers?)
+(add-watch filter-input :fetch-offers fetch-offers?)
