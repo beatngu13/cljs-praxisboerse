@@ -1,7 +1,7 @@
 (page "index.html"
   (:require [cljs-praxisboerse.core :refer [iz pw first-name offer-types countries offer-type-input country-input
                                             filter-input query invalid-iz? signed-in? sign-in!]]
-            [cljs-praxisboerse.templates :refer [offer-tpl]]
+            [cljs-praxisboerse.templates :refer [offer-list-item]]
             [hoplon.twitter.bootstrap :refer [container form-group]]))
 
 (html
@@ -71,8 +71,9 @@
             (li :class "list-group-item active" (text "Ergebnisse"))
             ;; TODO Should update when query-result changes (use case or cond).
             (if-tpl (cell= (seq query))
-          (for [item (:offers @query)]
-            (offer-tpl item (get-in @query [:companies (keyword (str (:companyId item)))]))))))
+              (let [q @query]
+                ;; TODO See http://stackoverflow.com/questions/39192226/create-a-keyword-from-a-number.
+                (map #(offer-list-item % (get-in q [:companies (keyword (str (:companyId %)))])) (:offers q))))))
         (p "Bitte logge dich ein, um aktuelle Angebote einzusehen.")))
 
     (container
