@@ -9,15 +9,15 @@
         mail     (:email contact)
         details? (cell false)]
     (li :class "list-group-item"
-      (span :id (str "company-" (:id offer)) :style "cursor: pointer;" :click #(swap! details? not)
+      (span :style "cursor: pointer;" :click #(swap! details? not)
         (h4
           (text (:shortDescription offer))
           (small (:companyName company) ", " (:city company))))
-      (div :style "display: none;" :class "row" :toggle details?
+      (div :class "row" :toggle details?
         (div :class "col-md-12" (text (:description offer)))
-        (div :class "col-md-12 well well-lg"
+        (div :class "col-md-12 well"
           (div :class "row"
-            (div :class "col-md-3 col-xs-12"
+            (div :class "col-md-5"
               ;; TODO Use text for consistency?
               (h4 "Über das Unternehmen")
               (:companyName company) (br)
@@ -25,7 +25,7 @@
               (:zipCode company) " " (:city company) (br)
               (br)
               (a :href web :target "_blank" (text web)))
-            (div :class "col-md-3 col-xs-12"
+            (div :class "col-md-5"
               ;; TODO Use text for consistency?
               (h4 "Kontakt")
               (:formOfAddress contact) " " (:firstName contact) " " (:secondName contact) (br)
