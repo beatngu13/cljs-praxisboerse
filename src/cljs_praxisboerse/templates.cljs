@@ -1,17 +1,19 @@
 (ns cljs-praxisboerse.templates
-  (:require [hoplon.core :refer [a br div h4 li small span]])
+  (:require [hoplon.core :refer [a br div h4 li small span]]
+            [javelin.core :refer [cell]])
   (:require-macros [hoplon.core :refer [text]]))
 
 (defn offer-list-item [offer company]
-  (let [web     (:website company)
-        contact (:contact offer)
-        mail    (:email contact)]
+  (let [web      (:website company)
+        contact  (:contact offer)
+        mail     (:email contact)
+        details? (cell false)]
     (li :class "list-group-item"
-      (span :id (str "company-" (:id offer)) :style "cursor: pointer;"
+      (span :id (str "company-" (:id offer)) :style "cursor: pointer;" :click #(swap! details? not)
         (h4
           (text (:shortDescription offer))
           (small (:companyName company) ", " (:city company))))
-      (div :style "display: none;" :class "row"
+      (div :style "display: none;" :class "row" :toggle details?
         (div :class "col-md-12" (text (:description offer)))
         (div :class "col-md-12 well well-lg"
           (div :class "row"
