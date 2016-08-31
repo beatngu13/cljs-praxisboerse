@@ -69,11 +69,10 @@
                      :change #(reset! filter-input (.val (js/jQuery (.-target %)))) :id "filterInput")))
           (ul :class "list-group"
             (li :class "list-group-item active" (text "Ergebnisse"))
-            ;; TODO Should update when query-result changes (use case or cond).
-            (if-tpl (cell= (seq query))
-              (let [q @query]
-                ;; TODO See http://stackoverflow.com/questions/39192226/create-a-keyword-from-a-number.
-                (map #(offer-list-item % (get-in q [:companies (keyword (str (:companyId %)))])) (:offers q))))))
+            ;; TODO See http://stackoverflow.com/questions/39192226/create-a-keyword-from-a-number.
+            (for-tpl [offer (cell= (:offers query))]
+              (let [company (cell= (get-in query [:companies (keyword (str (:companyId offer)))]))]
+                (offer-list-item offer company)))))
         (p "Bitte logge dich ein, um aktuelle Angebote einzusehen.")))
 
     (container
