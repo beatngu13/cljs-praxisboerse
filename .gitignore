@@ -8,4 +8,4 @@ target
 # IntelliJ
 
 .idea
-boot-project.iml
+cljs-praxisboerse.iml
