@@ -4,7 +4,8 @@
   (:require-macros [hoplon.core :refer [text]]
                    [javelin.core :refer [cell=]]))
 
-;; TODO Get rid off all those cells.
+;; TODO Get rid off all those cells (and why does offer sometimes works without).
+;; TODO Move CSS to app.css.
 (defn offer-list-item [offer company]
   (let [web      (cell= (:website company))
         contact  (cell= (:contact offer))
@@ -14,22 +15,23 @@
       (span :style "cursor: pointer;" :click #(swap! details? not)
         (h4
           (text (:shortDescription offer))
-          (small (cell= (:companyName company)) ", " (cell= (:city company)))))
+          (small " " (cell= (:companyName company)) ", " (cell= (:city company)))))
       (div :class "row" :toggle details?
-        (div :class "col-md-12" (text (:description offer)))
-        (div :class "col-md-12 well"
-          (div :class "row"
-            (div :class "col-md-5"
-              ;; TODO Use text for consistency?
-              (h4 "Über das Unternehmen")
-              (cell= (:companyName company)) (br)
-              (cell= (:street company)) (br)
-              (cell= (:zipCode company)) " " (cell= (:city company)) (br)
-              (br)
-              (cell= (a :href web :target "_blank" (text web))))
-            (div :class "col-md-5"
-              ;; TODO Use text for consistency?
-              (h4 "Kontakt")
-              (cell= (:formOfAddress contact)) " " (cell= (:firstName contact)) " " (cell= (:secondName contact)) (br)
-              "Telefon: " (cell= (:telephone contact)) (br)
-              "E-Mail: " (cell= (a :href (str "mailto:" mail) (text mail))))))))))
+        (div :class "col-md-12" :css {:margin-bottom "10px"} (text (:description offer)))
+        (div :css {:padding "0px 10px 0px 10px"}
+          (div :class "col-md-12 well"
+            (div :class "row"
+              (div :class "col-md-5"
+                ;; TODO Use text for consistency?
+                (h4 "Über das Unternehmen")
+                (cell= (:companyName company)) (br)
+                (cell= (:street company)) (br)
+                (cell= (:zipCode company)) " " (cell= (:city company)) (br)
+                (br)
+                (cell= (a :href web :target "_blank" (text web))))
+              (div :class "col-md-5"
+                ;; TODO Use text for consistency?
+                (h4 "Kontakt")
+                (cell= (:formOfAddress contact)) " " (cell= (:firstName contact)) " " (cell= (:secondName contact)) (br)
+                "Telefon: " (cell= (:telephone contact)) (br)
+                "E-Mail: " (cell= (a :href (str "mailto:" mail) (text mail)))))))))))
