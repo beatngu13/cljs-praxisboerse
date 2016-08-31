@@ -42,8 +42,7 @@
           (reset! first-name (get-in response [:body :firstName]))
           (reset! pw "")))))
 
-(add-watch signed-in? :fetch-offer-types (fn [_ _ _ new-state]
-                                           (if (true? new-state) (fetch-offer-types!))))
+(add-watch signed-in? :fetch-offer-types #(if (true? %4) (fetch-offer-types!)))
 
 (defn fetch-offers? [_ _ old-state new-state]
   (if (not= old-state new-state) (fetch-offers!)))
