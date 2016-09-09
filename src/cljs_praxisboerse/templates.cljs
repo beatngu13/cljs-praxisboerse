@@ -5,7 +5,6 @@
                    [javelin.core :refer [cell=]]))
 
 ;; TODO Get rid off all those cells (and why does offer sometimes works without).
-;; TODO Move CSS to app.css.
 (defn offer-list-item [offer company]
   (let [web      (cell= (:website company))
         contact  (cell= (:contact offer))
@@ -17,8 +16,8 @@
           (text (:shortDescription offer))
           (small " " (cell= (:companyName company)) ", " (cell= (:city company)))))
       (div :class "row" :toggle details?
-        (div :class "col-md-12" :css {:margin-bottom "10px"} (text (:description offer)))
-        (div :css {:padding "0px 10px 0px 10px"}
+        (div :class "col-md-12" (text (:description offer)))
+        (div :class "details-wrapper"
           (div :class "col-md-12 well"
             (div :class "row"
               (div :class "col-md-5"

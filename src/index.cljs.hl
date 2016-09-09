@@ -43,26 +43,23 @@
         (p (a :class "btn btn-primary btn-lg" :href "https://www.github.com/beatngu13/cljs-praxisboerse" :role "button"
               (text "Auf GitHub anschauen \u00BB")))))
 
-    ;; TODO Move CSS to app.css.
     (container
       (h2 "Aktuelle Angebote")
       (if-tpl signed-in?
         (div
-          (form :class "form-inline" :css {:margin-bottom "15px"}
+          (form :class "form-inline"
             (form-group
               (label :for "offerTypeInput" (text "Angebotsart"))
-              (select :class "form-control" :value offer-type-input
+              (select :class "form-control control-between" :value offer-type-input
                       ;; FIXME Why leads @% to an error?
                       :change #(reset! offer-type-input (.val (js/jQuery (.-target %)))) :id "offerTypeInput"
-                      :css {:margin "0px 5px 0px 5px"}
                 (if-tpl (cell= (seq offer-types))
                   (map #(option :value (:shortname %) (text (:name %))) @offer-types))))
             (form-group
               (label :for "inputFilter" (text "Filter"))
-              (input :type "text" :class "form-control" :placeholder "z. B. ClojureScript" :value filter-input
+              (input :type "text" :class "form-control control-right" :placeholder "z. B. ClojureScript" :value filter-input
                      ;; FIXME Why leads @% to an error?
-                     :change #(reset! filter-input (.val (js/jQuery (.-target %)))) :id "filterInput"
-                     :css {:margin-left "5px"})))
+                     :change #(reset! filter-input (.val (js/jQuery (.-target %)))) :id "filterInput")))
           (ul :class "list-group"
             (li :class "list-group-item active" (text "Ergebnisse"))
             ;; TODO See http://stackoverflow.com/questions/39192226/create-a-keyword-from-a-number.
