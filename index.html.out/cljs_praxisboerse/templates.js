@@ -4,188 +4,207 @@ goog.require('cljs.core');
 goog.require('hoplon.core');
 goog.require('javelin.core');
 cljs_praxisboerse.templates.offer_list_item = (function cljs_praxisboerse$templates$offer_list_item(offer,company){
-var web = javelin.core.formula((function (G__18334){
-return cljs.core.cst$kw$website.cljs$core$IFn$_invoke$arity$1(G__18334);
+var web = javelin.core.formula((function (G__14306){
+return cljs.core.cst$kw$website.cljs$core$IFn$_invoke$arity$1(G__14306);
 })).call(null,company);
 var contact = javelin.core.formula(((function (web){
-return (function (G__18335){
-return cljs.core.cst$kw$contact.cljs$core$IFn$_invoke$arity$1(G__18335);
+return (function (G__14307){
+return cljs.core.cst$kw$contact.cljs$core$IFn$_invoke$arity$1(G__14307);
 });})(web))
 ).call(null,offer);
 var mail = javelin.core.formula(((function (web,contact){
-return (function (G__18336){
-return cljs.core.cst$kw$email.cljs$core$IFn$_invoke$arity$1(G__18336);
+return (function (G__14308){
+return cljs.core.cst$kw$email.cljs$core$IFn$_invoke$arity$1(G__14308);
 });})(web,contact))
 ).call(null,contact);
 var details_QMARK_ = javelin.core.cell.cljs$core$IFn$_invoke$arity$1(false);
-var G__18355 = cljs.core.cst$kw$class;
-var G__18356 = "list-group-item";
-var G__18357 = (function (){var G__18359 = cljs.core.cst$kw$style;
-var G__18360 = "cursor: pointer;";
-var G__18361 = cljs.core.cst$kw$click;
-var G__18362 = ((function (G__18359,G__18360,G__18361,G__18355,G__18356,web,contact,mail,details_QMARK_){
+var G__14327 = cljs.core.cst$kw$class;
+var G__14328 = "list-group-item";
+var G__14329 = (function (){var G__14331 = cljs.core.cst$kw$style;
+var G__14332 = "cursor: pointer;";
+var G__14333 = cljs.core.cst$kw$click;
+var G__14334 = ((function (G__14331,G__14332,G__14333,G__14327,G__14328,web,contact,mail,details_QMARK_){
 return (function (){
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(details_QMARK_,cljs.core.not);
-});})(G__18359,G__18360,G__18361,G__18355,G__18356,web,contact,mail,details_QMARK_))
+});})(G__14331,G__14332,G__14333,G__14327,G__14328,web,contact,mail,details_QMARK_))
 ;
-var G__18363 = (function (){var G__18366 = (function (){var t__17625__auto__ = document.createTextNode("");
-javelin.core.formula(((function (t__17625__auto__,G__18359,G__18360,G__18361,G__18362,G__18355,G__18356,web,contact,mail,details_QMARK_){
-return (function (G__18368,G__18369){
-return G__18368.nodeValue = cljs.core.cst$kw$shortDescription.cljs$core$IFn$_invoke$arity$1(G__18369);
-});})(t__17625__auto__,G__18359,G__18360,G__18361,G__18362,G__18355,G__18356,web,contact,mail,details_QMARK_))
-).call(null,t__17625__auto__,offer);
+var G__14335 = (function (){var G__14338 = (function (){var t__13416__auto__ = document.createTextNode("");
+javelin.core.formula(((function (t__13416__auto__,G__14331,G__14332,G__14333,G__14334,G__14327,G__14328,web,contact,mail,details_QMARK_){
+return (function (G__14341,G__14340){
+return G__14340.nodeValue = cljs.core.cst$kw$shortDescription.cljs$core$IFn$_invoke$arity$1(G__14341);
+});})(t__13416__auto__,G__14331,G__14332,G__14333,G__14334,G__14327,G__14328,web,contact,mail,details_QMARK_))
+).call(null,offer,t__13416__auto__);
 
-return t__17625__auto__;
+return t__13416__auto__;
 })();
-var G__18367 = (function (){var G__18371 = " ";
-var G__18372 = javelin.core.formula(((function (G__18371,G__18366,G__18359,G__18360,G__18361,G__18362,G__18355,G__18356,web,contact,mail,details_QMARK_){
-return (function (G__18375){
-return cljs.core.cst$kw$companyName.cljs$core$IFn$_invoke$arity$1(G__18375);
-});})(G__18371,G__18366,G__18359,G__18360,G__18361,G__18362,G__18355,G__18356,web,contact,mail,details_QMARK_))
+var G__14339 = (function (){var G__14343 = " ";
+var G__14344 = javelin.core.formula(((function (G__14343,G__14338,G__14331,G__14332,G__14333,G__14334,G__14327,G__14328,web,contact,mail,details_QMARK_){
+return (function (G__14347){
+return cljs.core.cst$kw$companyName.cljs$core$IFn$_invoke$arity$1(G__14347);
+});})(G__14343,G__14338,G__14331,G__14332,G__14333,G__14334,G__14327,G__14328,web,contact,mail,details_QMARK_))
 ).call(null,company);
-var G__18373 = ", ";
-var G__18374 = javelin.core.formula(((function (G__18371,G__18372,G__18373,G__18366,G__18359,G__18360,G__18361,G__18362,G__18355,G__18356,web,contact,mail,details_QMARK_){
-return (function (G__18376){
-return cljs.core.cst$kw$city.cljs$core$IFn$_invoke$arity$1(G__18376);
-});})(G__18371,G__18372,G__18373,G__18366,G__18359,G__18360,G__18361,G__18362,G__18355,G__18356,web,contact,mail,details_QMARK_))
+var G__14345 = ", ";
+var G__14346 = javelin.core.formula(((function (G__14343,G__14344,G__14345,G__14338,G__14331,G__14332,G__14333,G__14334,G__14327,G__14328,web,contact,mail,details_QMARK_){
+return (function (G__14348){
+return cljs.core.cst$kw$city.cljs$core$IFn$_invoke$arity$1(G__14348);
+});})(G__14343,G__14344,G__14345,G__14338,G__14331,G__14332,G__14333,G__14334,G__14327,G__14328,web,contact,mail,details_QMARK_))
 ).call(null,company);
-return (hoplon.core.small.cljs$core$IFn$_invoke$arity$4 ? hoplon.core.small.cljs$core$IFn$_invoke$arity$4(G__18371,G__18372,G__18373,G__18374) : hoplon.core.small.call(null,G__18371,G__18372,G__18373,G__18374));
+return (hoplon.core.small.cljs$core$IFn$_invoke$arity$4 ? hoplon.core.small.cljs$core$IFn$_invoke$arity$4(G__14343,G__14344,G__14345,G__14346) : hoplon.core.small.call(null,G__14343,G__14344,G__14345,G__14346));
 })();
-return (hoplon.core.h4.cljs$core$IFn$_invoke$arity$2 ? hoplon.core.h4.cljs$core$IFn$_invoke$arity$2(G__18366,G__18367) : hoplon.core.h4.call(null,G__18366,G__18367));
+return (hoplon.core.h4.cljs$core$IFn$_invoke$arity$2 ? hoplon.core.h4.cljs$core$IFn$_invoke$arity$2(G__14338,G__14339) : hoplon.core.h4.call(null,G__14338,G__14339));
 })();
-return (hoplon.core.span.cljs$core$IFn$_invoke$arity$5 ? hoplon.core.span.cljs$core$IFn$_invoke$arity$5(G__18359,G__18360,G__18361,G__18362,G__18363) : hoplon.core.span.call(null,G__18359,G__18360,G__18361,G__18362,G__18363));
+return (hoplon.core.span.cljs$core$IFn$_invoke$arity$5 ? hoplon.core.span.cljs$core$IFn$_invoke$arity$5(G__14331,G__14332,G__14333,G__14334,G__14335) : hoplon.core.span.call(null,G__14331,G__14332,G__14333,G__14334,G__14335));
 })();
-var G__18358 = (function (){var G__18384 = cljs.core.cst$kw$class;
-var G__18385 = "row";
-var G__18386 = cljs.core.cst$kw$toggle;
-var G__18387 = details_QMARK_;
-var G__18388 = (function (){var G__18390 = cljs.core.cst$kw$class;
-var G__18391 = "col-md-12";
-var G__18392 = cljs.core.cst$kw$css;
-var G__18393 = new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$margin_DASH_bottom,"10px"], null);
-var G__18394 = (function (){var t__17625__auto__ = document.createTextNode("");
-javelin.core.formula(((function (t__17625__auto__,G__18390,G__18391,G__18392,G__18393,G__18384,G__18385,G__18386,G__18387,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18395,G__18396){
-return G__18395.nodeValue = cljs.core.cst$kw$description.cljs$core$IFn$_invoke$arity$1(G__18396);
-});})(t__17625__auto__,G__18390,G__18391,G__18392,G__18393,G__18384,G__18385,G__18386,G__18387,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
-).call(null,t__17625__auto__,offer);
+var G__14330 = (function (){var G__14356 = cljs.core.cst$kw$class;
+var G__14357 = "row";
+var G__14358 = cljs.core.cst$kw$toggle;
+var G__14359 = details_QMARK_;
+var G__14360 = (function (){var G__14364 = cljs.core.cst$kw$class;
+var G__14365 = "col-md-12";
+var G__14366 = (function (){var t__13416__auto__ = document.createTextNode("");
+javelin.core.formula(((function (t__13416__auto__,G__14364,G__14365,G__14356,G__14357,G__14358,G__14359,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14368,G__14367){
+return G__14367.nodeValue = cljs.core.cst$kw$description.cljs$core$IFn$_invoke$arity$1(G__14368);
+});})(t__13416__auto__,G__14364,G__14365,G__14356,G__14357,G__14358,G__14359,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
+).call(null,offer,t__13416__auto__);
 
-return t__17625__auto__;
+return t__13416__auto__;
 })();
-return (hoplon.core.div.cljs$core$IFn$_invoke$arity$5 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$5(G__18390,G__18391,G__18392,G__18393,G__18394) : hoplon.core.div.call(null,G__18390,G__18391,G__18392,G__18393,G__18394));
+return (hoplon.core.div.cljs$core$IFn$_invoke$arity$3 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$3(G__14364,G__14365,G__14366) : hoplon.core.div.call(null,G__14364,G__14365,G__14366));
 })();
-var G__18389 = (function (){var G__18397 = cljs.core.cst$kw$css;
-var G__18398 = new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$padding,"0px 10px 0px 10px"], null);
-var G__18399 = (function (){var G__18489 = cljs.core.cst$kw$class;
-var G__18490 = "col-md-12 well";
-var G__18491 = (function (){var G__18521 = cljs.core.cst$kw$class;
-var G__18522 = "row";
-var G__18523 = (function (){var G__18525 = cljs.core.cst$kw$class;
-var G__18526 = "col-md-5";
-var G__18527 = (hoplon.core.h4.cljs$core$IFn$_invoke$arity$1 ? hoplon.core.h4.cljs$core$IFn$_invoke$arity$1("\u00DCber das Unternehmen") : hoplon.core.h4.call(null,"\u00DCber das Unternehmen"));
-var G__18528 = javelin.core.formula(((function (G__18525,G__18526,G__18527,G__18521,G__18522,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18538){
-return cljs.core.cst$kw$companyName.cljs$core$IFn$_invoke$arity$1(G__18538);
-});})(G__18525,G__18526,G__18527,G__18521,G__18522,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
+var G__14361 = (function (){var G__14550 = cljs.core.cst$kw$class;
+var G__14551 = "details-wrapper";
+var G__14552 = (function (){var G__14642 = cljs.core.cst$kw$class;
+var G__14643 = "col-md-12 well";
+var G__14644 = (function (){var G__14660 = cljs.core.cst$kw$class;
+var G__14661 = "row";
+var G__14662 = (function (){var G__14665 = cljs.core.cst$kw$class;
+var G__14666 = "col-md-4";
+var G__14667 = (hoplon.core.h4.cljs$core$IFn$_invoke$arity$1 ? hoplon.core.h4.cljs$core$IFn$_invoke$arity$1("\u00DCber das Unternehmen") : hoplon.core.h4.call(null,"\u00DCber das Unternehmen"));
+var G__14668 = javelin.core.formula(((function (G__14665,G__14666,G__14667,G__14660,G__14661,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14676){
+return cljs.core.cst$kw$companyName.cljs$core$IFn$_invoke$arity$1(G__14676);
+});})(G__14665,G__14666,G__14667,G__14660,G__14661,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
 ).call(null,company);
-var G__18529 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
-var G__18530 = javelin.core.formula(((function (G__18525,G__18526,G__18527,G__18528,G__18529,G__18521,G__18522,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18539){
-return cljs.core.cst$kw$street.cljs$core$IFn$_invoke$arity$1(G__18539);
-});})(G__18525,G__18526,G__18527,G__18528,G__18529,G__18521,G__18522,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
+var G__14669 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
+var G__14670 = javelin.core.formula(((function (G__14665,G__14666,G__14667,G__14668,G__14669,G__14660,G__14661,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14677){
+return cljs.core.cst$kw$street.cljs$core$IFn$_invoke$arity$1(G__14677);
+});})(G__14665,G__14666,G__14667,G__14668,G__14669,G__14660,G__14661,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
 ).call(null,company);
-var G__18531 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
-var G__18532 = javelin.core.formula(((function (G__18525,G__18526,G__18527,G__18528,G__18529,G__18530,G__18531,G__18521,G__18522,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18540){
-return cljs.core.cst$kw$zipCode.cljs$core$IFn$_invoke$arity$1(G__18540);
-});})(G__18525,G__18526,G__18527,G__18528,G__18529,G__18530,G__18531,G__18521,G__18522,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
+var G__14671 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
+var G__14672 = javelin.core.formula(((function (G__14665,G__14666,G__14667,G__14668,G__14669,G__14670,G__14671,G__14660,G__14661,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14678){
+return cljs.core.cst$kw$zipCode.cljs$core$IFn$_invoke$arity$1(G__14678);
+});})(G__14665,G__14666,G__14667,G__14668,G__14669,G__14670,G__14671,G__14660,G__14661,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
 ).call(null,company);
-var G__18533 = " ";
-var G__18534 = javelin.core.formula(((function (G__18525,G__18526,G__18527,G__18528,G__18529,G__18530,G__18531,G__18532,G__18533,G__18521,G__18522,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18541){
-return cljs.core.cst$kw$city.cljs$core$IFn$_invoke$arity$1(G__18541);
-});})(G__18525,G__18526,G__18527,G__18528,G__18529,G__18530,G__18531,G__18532,G__18533,G__18521,G__18522,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
+var G__14673 = " ";
+var G__14674 = javelin.core.formula(((function (G__14665,G__14666,G__14667,G__14668,G__14669,G__14670,G__14671,G__14672,G__14673,G__14660,G__14661,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14679){
+return cljs.core.cst$kw$city.cljs$core$IFn$_invoke$arity$1(G__14679);
+});})(G__14665,G__14666,G__14667,G__14668,G__14669,G__14670,G__14671,G__14672,G__14673,G__14660,G__14661,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
 ).call(null,company);
-var G__18535 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
-var G__18536 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
-var G__18537 = javelin.core.formula(((function (G__18525,G__18526,G__18527,G__18528,G__18529,G__18530,G__18531,G__18532,G__18533,G__18534,G__18535,G__18536,G__18521,G__18522,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18544,G__18545,G__18546){
-var G__18548 = cljs.core.cst$kw$href;
-var G__18549 = G__18545;
-var G__18550 = cljs.core.cst$kw$target;
-var G__18551 = "_blank";
-var G__18552 = (function (){var t__17625__auto__ = document.createTextNode("");
-(function (){var G__18553 = ((function (t__17625__auto__,G__18548,G__18549,G__18550,G__18551,G__18525,G__18526,G__18527,G__18528,G__18529,G__18530,G__18531,G__18532,G__18533,G__18534,G__18535,G__18536,G__18521,G__18522,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18542,G__18543){
-return G__18542.nodeValue = G__18543;
-});})(t__17625__auto__,G__18548,G__18549,G__18550,G__18551,G__18525,G__18526,G__18527,G__18528,G__18529,G__18530,G__18531,G__18532,G__18533,G__18534,G__18535,G__18536,G__18521,G__18522,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
+var G__14675 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
+return (hoplon.core.div.cljs$core$IFn$_invoke$arity$11 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$11(G__14665,G__14666,G__14667,G__14668,G__14669,G__14670,G__14671,G__14672,G__14673,G__14674,G__14675) : hoplon.core.div.call(null,G__14665,G__14666,G__14667,G__14668,G__14669,G__14670,G__14671,G__14672,G__14673,G__14674,G__14675));
+})();
+var G__14663 = (function (){var G__14680 = cljs.core.cst$kw$class;
+var G__14681 = "col-md-4";
+var G__14682 = (hoplon.core.h4.cljs$core$IFn$_invoke$arity$1 ? hoplon.core.h4.cljs$core$IFn$_invoke$arity$1("Kontakt") : hoplon.core.h4.call(null,"Kontakt"));
+var G__14683 = javelin.core.formula(((function (G__14680,G__14681,G__14682,G__14660,G__14661,G__14662,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14694){
+return cljs.core.cst$kw$formOfAddress.cljs$core$IFn$_invoke$arity$1(G__14694);
+});})(G__14680,G__14681,G__14682,G__14660,G__14661,G__14662,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
+).call(null,contact);
+var G__14684 = " ";
+var G__14685 = javelin.core.formula(((function (G__14680,G__14681,G__14682,G__14683,G__14684,G__14660,G__14661,G__14662,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14695){
+return cljs.core.cst$kw$firstName.cljs$core$IFn$_invoke$arity$1(G__14695);
+});})(G__14680,G__14681,G__14682,G__14683,G__14684,G__14660,G__14661,G__14662,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
+).call(null,contact);
+var G__14686 = " ";
+var G__14687 = javelin.core.formula(((function (G__14680,G__14681,G__14682,G__14683,G__14684,G__14685,G__14686,G__14660,G__14661,G__14662,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14696){
+return cljs.core.cst$kw$secondName.cljs$core$IFn$_invoke$arity$1(G__14696);
+});})(G__14680,G__14681,G__14682,G__14683,G__14684,G__14685,G__14686,G__14660,G__14661,G__14662,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
+).call(null,contact);
+var G__14688 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
+var G__14689 = (hoplon.core.span.cljs$core$IFn$_invoke$arity$4 ? hoplon.core.span.cljs$core$IFn$_invoke$arity$4(cljs.core.cst$kw$class,"glyphicon glyphicon-phone-alt",cljs.core.cst$kw$aria_DASH_hidden,"true") : hoplon.core.span.call(null,cljs.core.cst$kw$class,"glyphicon glyphicon-phone-alt",cljs.core.cst$kw$aria_DASH_hidden,"true"));
+var G__14690 = javelin.core.formula(((function (G__14680,G__14681,G__14682,G__14683,G__14684,G__14685,G__14686,G__14687,G__14688,G__14689,G__14660,G__14661,G__14662,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14697){
+return cljs.core.cst$kw$telephone.cljs$core$IFn$_invoke$arity$1(G__14697);
+});})(G__14680,G__14681,G__14682,G__14683,G__14684,G__14685,G__14686,G__14687,G__14688,G__14689,G__14660,G__14661,G__14662,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
+).call(null,contact);
+var G__14691 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
+var G__14692 = (hoplon.core.span.cljs$core$IFn$_invoke$arity$4 ? hoplon.core.span.cljs$core$IFn$_invoke$arity$4(cljs.core.cst$kw$class,"glyphicon glyphicon-envelope",cljs.core.cst$kw$aria_DASH_hidden,"true") : hoplon.core.span.call(null,cljs.core.cst$kw$class,"glyphicon glyphicon-envelope",cljs.core.cst$kw$aria_DASH_hidden,"true"));
+var G__14693 = javelin.core.formula(((function (G__14680,G__14681,G__14682,G__14683,G__14684,G__14685,G__14686,G__14687,G__14688,G__14689,G__14690,G__14691,G__14692,G__14660,G__14661,G__14662,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14700,G__14701,G__14702){
+var G__14703 = cljs.core.cst$kw$href;
+var G__14704 = [cljs.core.str("mailto:"),cljs.core.str(G__14701)].join('');
+var G__14705 = (function (){var t__13416__auto__ = document.createTextNode("");
+(function (){var G__14706 = ((function (t__13416__auto__,G__14703,G__14704,G__14680,G__14681,G__14682,G__14683,G__14684,G__14685,G__14686,G__14687,G__14688,G__14689,G__14690,G__14691,G__14692,G__14660,G__14661,G__14662,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14698,G__14699){
+return G__14698.nodeValue = G__14699;
+});})(t__13416__auto__,G__14703,G__14704,G__14680,G__14681,G__14682,G__14683,G__14684,G__14685,G__14686,G__14687,G__14688,G__14689,G__14690,G__14691,G__14692,G__14660,G__14661,G__14662,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
 ;
-return (G__18546.cljs$core$IFn$_invoke$arity$1 ? G__18546.cljs$core$IFn$_invoke$arity$1(G__18553) : G__18546.call(null,G__18553));
-})().call(null,t__17625__auto__,G__18545);
+return (G__14702.cljs$core$IFn$_invoke$arity$1 ? G__14702.cljs$core$IFn$_invoke$arity$1(G__14706) : G__14702.call(null,G__14706));
+})().call(null,t__13416__auto__,G__14701);
 
-return t__17625__auto__;
+return t__13416__auto__;
 })();
-return (G__18544.cljs$core$IFn$_invoke$arity$5 ? G__18544.cljs$core$IFn$_invoke$arity$5(G__18548,G__18549,G__18550,G__18551,G__18552) : G__18544.call(null,G__18548,G__18549,G__18550,G__18551,G__18552));
-});})(G__18525,G__18526,G__18527,G__18528,G__18529,G__18530,G__18531,G__18532,G__18533,G__18534,G__18535,G__18536,G__18521,G__18522,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
-).call(null,hoplon.core.a,web,javelin.core.formula);
-return (hoplon.core.div.cljs$core$IFn$_invoke$arity$13 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$13(G__18525,G__18526,G__18527,G__18528,G__18529,G__18530,G__18531,G__18532,G__18533,G__18534,G__18535,G__18536,G__18537) : hoplon.core.div.call(null,G__18525,G__18526,G__18527,G__18528,G__18529,G__18530,G__18531,G__18532,G__18533,G__18534,G__18535,G__18536,G__18537));
-})();
-var G__18524 = (function (){var G__18554 = cljs.core.cst$kw$class;
-var G__18555 = "col-md-5";
-var G__18556 = (hoplon.core.h4.cljs$core$IFn$_invoke$arity$1 ? hoplon.core.h4.cljs$core$IFn$_invoke$arity$1("Kontakt") : hoplon.core.h4.call(null,"Kontakt"));
-var G__18557 = javelin.core.formula(((function (G__18554,G__18555,G__18556,G__18521,G__18522,G__18523,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18568){
-return cljs.core.cst$kw$formOfAddress.cljs$core$IFn$_invoke$arity$1(G__18568);
-});})(G__18554,G__18555,G__18556,G__18521,G__18522,G__18523,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
-).call(null,contact);
-var G__18558 = " ";
-var G__18559 = javelin.core.formula(((function (G__18554,G__18555,G__18556,G__18557,G__18558,G__18521,G__18522,G__18523,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18569){
-return cljs.core.cst$kw$firstName.cljs$core$IFn$_invoke$arity$1(G__18569);
-});})(G__18554,G__18555,G__18556,G__18557,G__18558,G__18521,G__18522,G__18523,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
-).call(null,contact);
-var G__18560 = " ";
-var G__18561 = javelin.core.formula(((function (G__18554,G__18555,G__18556,G__18557,G__18558,G__18559,G__18560,G__18521,G__18522,G__18523,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18570){
-return cljs.core.cst$kw$secondName.cljs$core$IFn$_invoke$arity$1(G__18570);
-});})(G__18554,G__18555,G__18556,G__18557,G__18558,G__18559,G__18560,G__18521,G__18522,G__18523,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
-).call(null,contact);
-var G__18562 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
-var G__18563 = "Telefon: ";
-var G__18564 = javelin.core.formula(((function (G__18554,G__18555,G__18556,G__18557,G__18558,G__18559,G__18560,G__18561,G__18562,G__18563,G__18521,G__18522,G__18523,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18571){
-return cljs.core.cst$kw$telephone.cljs$core$IFn$_invoke$arity$1(G__18571);
-});})(G__18554,G__18555,G__18556,G__18557,G__18558,G__18559,G__18560,G__18561,G__18562,G__18563,G__18521,G__18522,G__18523,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
-).call(null,contact);
-var G__18565 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
-var G__18566 = "E-Mail: ";
-var G__18567 = javelin.core.formula(((function (G__18554,G__18555,G__18556,G__18557,G__18558,G__18559,G__18560,G__18561,G__18562,G__18563,G__18564,G__18565,G__18566,G__18521,G__18522,G__18523,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18574,G__18575,G__18576){
-var G__18577 = cljs.core.cst$kw$href;
-var G__18578 = [cljs.core.str("mailto:"),cljs.core.str(G__18575)].join('');
-var G__18579 = (function (){var t__17625__auto__ = document.createTextNode("");
-(function (){var G__18580 = ((function (t__17625__auto__,G__18577,G__18578,G__18554,G__18555,G__18556,G__18557,G__18558,G__18559,G__18560,G__18561,G__18562,G__18563,G__18564,G__18565,G__18566,G__18521,G__18522,G__18523,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_){
-return (function (G__18572,G__18573){
-return G__18572.nodeValue = G__18573;
-});})(t__17625__auto__,G__18577,G__18578,G__18554,G__18555,G__18556,G__18557,G__18558,G__18559,G__18560,G__18561,G__18562,G__18563,G__18564,G__18565,G__18566,G__18521,G__18522,G__18523,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
-;
-return (G__18576.cljs$core$IFn$_invoke$arity$1 ? G__18576.cljs$core$IFn$_invoke$arity$1(G__18580) : G__18576.call(null,G__18580));
-})().call(null,t__17625__auto__,G__18575);
-
-return t__17625__auto__;
-})();
-return (G__18574.cljs$core$IFn$_invoke$arity$3 ? G__18574.cljs$core$IFn$_invoke$arity$3(G__18577,G__18578,G__18579) : G__18574.call(null,G__18577,G__18578,G__18579));
-});})(G__18554,G__18555,G__18556,G__18557,G__18558,G__18559,G__18560,G__18561,G__18562,G__18563,G__18564,G__18565,G__18566,G__18521,G__18522,G__18523,G__18489,G__18490,G__18397,G__18398,G__18384,G__18385,G__18386,G__18387,G__18388,G__18355,G__18356,G__18357,web,contact,mail,details_QMARK_))
+return (G__14700.cljs$core$IFn$_invoke$arity$3 ? G__14700.cljs$core$IFn$_invoke$arity$3(G__14703,G__14704,G__14705) : G__14700.call(null,G__14703,G__14704,G__14705));
+});})(G__14680,G__14681,G__14682,G__14683,G__14684,G__14685,G__14686,G__14687,G__14688,G__14689,G__14690,G__14691,G__14692,G__14660,G__14661,G__14662,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
 ).call(null,hoplon.core.a,mail,javelin.core.formula);
-return (hoplon.core.div.cljs$core$IFn$_invoke$arity$14 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$14(G__18554,G__18555,G__18556,G__18557,G__18558,G__18559,G__18560,G__18561,G__18562,G__18563,G__18564,G__18565,G__18566,G__18567) : hoplon.core.div.call(null,G__18554,G__18555,G__18556,G__18557,G__18558,G__18559,G__18560,G__18561,G__18562,G__18563,G__18564,G__18565,G__18566,G__18567));
+return (hoplon.core.div.cljs$core$IFn$_invoke$arity$14 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$14(G__14680,G__14681,G__14682,G__14683,G__14684,G__14685,G__14686,G__14687,G__14688,G__14689,G__14690,G__14691,G__14692,G__14693) : hoplon.core.div.call(null,G__14680,G__14681,G__14682,G__14683,G__14684,G__14685,G__14686,G__14687,G__14688,G__14689,G__14690,G__14691,G__14692,G__14693));
 })();
-return (hoplon.core.div.cljs$core$IFn$_invoke$arity$4 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$4(G__18521,G__18522,G__18523,G__18524) : hoplon.core.div.call(null,G__18521,G__18522,G__18523,G__18524));
+var G__14664 = (function (){var G__14707 = cljs.core.cst$kw$class;
+var G__14708 = "col-md-4";
+var G__14709 = (hoplon.core.h4.cljs$core$IFn$_invoke$arity$1 ? hoplon.core.h4.cljs$core$IFn$_invoke$arity$1("Weitere Informationen") : hoplon.core.h4.call(null,"Weitere Informationen"));
+var G__14710 = (hoplon.core.span.cljs$core$IFn$_invoke$arity$4 ? hoplon.core.span.cljs$core$IFn$_invoke$arity$4(cljs.core.cst$kw$class,"glyphicon glyphicon-user",cljs.core.cst$kw$aria_DASH_hidden,"true") : hoplon.core.span.call(null,cljs.core.cst$kw$class,"glyphicon glyphicon-user",cljs.core.cst$kw$aria_DASH_hidden,"true"));
+var G__14711 = javelin.core.formula(((function (G__14707,G__14708,G__14709,G__14710,G__14660,G__14661,G__14662,G__14663,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14720){
+return cljs.core.cst$kw$numberOfEmployees.cljs$core$IFn$_invoke$arity$1(G__14720);
+});})(G__14707,G__14708,G__14709,G__14710,G__14660,G__14661,G__14662,G__14663,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
+).call(null,company);
+var G__14712 = " Mitarbeiter";
+var G__14713 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
+var G__14714 = (hoplon.core.span.cljs$core$IFn$_invoke$arity$4 ? hoplon.core.span.cljs$core$IFn$_invoke$arity$4(cljs.core.cst$kw$class,"glyphicon glyphicon-tags",cljs.core.cst$kw$aria_DASH_hidden,"true") : hoplon.core.span.call(null,cljs.core.cst$kw$class,"glyphicon glyphicon-tags",cljs.core.cst$kw$aria_DASH_hidden,"true"));
+var G__14715 = javelin.core.formula(((function (G__14707,G__14708,G__14709,G__14710,G__14711,G__14712,G__14713,G__14714,G__14660,G__14661,G__14662,G__14663,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14721){
+return cljs.core.cst$kw$numberOfOffers.cljs$core$IFn$_invoke$arity$1(G__14721);
+});})(G__14707,G__14708,G__14709,G__14710,G__14711,G__14712,G__14713,G__14714,G__14660,G__14661,G__14662,G__14663,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
+).call(null,company);
+var G__14716 = " Angebote";
+var G__14717 = (hoplon.core.br.cljs$core$IFn$_invoke$arity$0 ? hoplon.core.br.cljs$core$IFn$_invoke$arity$0() : hoplon.core.br.call(null));
+var G__14718 = (hoplon.core.span.cljs$core$IFn$_invoke$arity$4 ? hoplon.core.span.cljs$core$IFn$_invoke$arity$4(cljs.core.cst$kw$class,"glyphicon glyphicon-globe",cljs.core.cst$kw$aria_DASH_hidden,"true") : hoplon.core.span.call(null,cljs.core.cst$kw$class,"glyphicon glyphicon-globe",cljs.core.cst$kw$aria_DASH_hidden,"true"));
+var G__14719 = javelin.core.formula(((function (G__14707,G__14708,G__14709,G__14710,G__14711,G__14712,G__14713,G__14714,G__14715,G__14716,G__14717,G__14718,G__14660,G__14661,G__14662,G__14663,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14724,G__14725,G__14726){
+var G__14728 = cljs.core.cst$kw$href;
+var G__14729 = G__14725;
+var G__14730 = cljs.core.cst$kw$target;
+var G__14731 = "_blank";
+var G__14732 = (function (){var t__13416__auto__ = document.createTextNode("");
+(function (){var G__14733 = ((function (t__13416__auto__,G__14728,G__14729,G__14730,G__14731,G__14707,G__14708,G__14709,G__14710,G__14711,G__14712,G__14713,G__14714,G__14715,G__14716,G__14717,G__14718,G__14660,G__14661,G__14662,G__14663,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_){
+return (function (G__14723,G__14722){
+return G__14722.nodeValue = G__14723;
+});})(t__13416__auto__,G__14728,G__14729,G__14730,G__14731,G__14707,G__14708,G__14709,G__14710,G__14711,G__14712,G__14713,G__14714,G__14715,G__14716,G__14717,G__14718,G__14660,G__14661,G__14662,G__14663,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
+;
+return (G__14726.cljs$core$IFn$_invoke$arity$1 ? G__14726.cljs$core$IFn$_invoke$arity$1(G__14733) : G__14726.call(null,G__14733));
+})().call(null,G__14725,t__13416__auto__);
+
+return t__13416__auto__;
 })();
-return (hoplon.core.div.cljs$core$IFn$_invoke$arity$3 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$3(G__18489,G__18490,G__18491) : hoplon.core.div.call(null,G__18489,G__18490,G__18491));
+return (G__14724.cljs$core$IFn$_invoke$arity$5 ? G__14724.cljs$core$IFn$_invoke$arity$5(G__14728,G__14729,G__14730,G__14731,G__14732) : G__14724.call(null,G__14728,G__14729,G__14730,G__14731,G__14732));
+});})(G__14707,G__14708,G__14709,G__14710,G__14711,G__14712,G__14713,G__14714,G__14715,G__14716,G__14717,G__14718,G__14660,G__14661,G__14662,G__14663,G__14642,G__14643,G__14550,G__14551,G__14356,G__14357,G__14358,G__14359,G__14360,G__14327,G__14328,G__14329,web,contact,mail,details_QMARK_))
+).call(null,hoplon.core.a,web,javelin.core.formula);
+return (hoplon.core.div.cljs$core$IFn$_invoke$arity$13 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$13(G__14707,G__14708,G__14709,G__14710,G__14711,G__14712,G__14713,G__14714,G__14715,G__14716,G__14717,G__14718,G__14719) : hoplon.core.div.call(null,G__14707,G__14708,G__14709,G__14710,G__14711,G__14712,G__14713,G__14714,G__14715,G__14716,G__14717,G__14718,G__14719));
 })();
-return (hoplon.core.div.cljs$core$IFn$_invoke$arity$3 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$3(G__18397,G__18398,G__18399) : hoplon.core.div.call(null,G__18397,G__18398,G__18399));
+return (hoplon.core.div.cljs$core$IFn$_invoke$arity$5 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$5(G__14660,G__14661,G__14662,G__14663,G__14664) : hoplon.core.div.call(null,G__14660,G__14661,G__14662,G__14663,G__14664));
 })();
-return (hoplon.core.div.cljs$core$IFn$_invoke$arity$6 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$6(G__18384,G__18385,G__18386,G__18387,G__18388,G__18389) : hoplon.core.div.call(null,G__18384,G__18385,G__18386,G__18387,G__18388,G__18389));
+return (hoplon.core.div.cljs$core$IFn$_invoke$arity$3 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$3(G__14642,G__14643,G__14644) : hoplon.core.div.call(null,G__14642,G__14643,G__14644));
 })();
-return (hoplon.core.li.cljs$core$IFn$_invoke$arity$4 ? hoplon.core.li.cljs$core$IFn$_invoke$arity$4(G__18355,G__18356,G__18357,G__18358) : hoplon.core.li.call(null,G__18355,G__18356,G__18357,G__18358));
+return (hoplon.core.div.cljs$core$IFn$_invoke$arity$3 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$3(G__14550,G__14551,G__14552) : hoplon.core.div.call(null,G__14550,G__14551,G__14552));
+})();
+return (hoplon.core.div.cljs$core$IFn$_invoke$arity$6 ? hoplon.core.div.cljs$core$IFn$_invoke$arity$6(G__14356,G__14357,G__14358,G__14359,G__14360,G__14361) : hoplon.core.div.call(null,G__14356,G__14357,G__14358,G__14359,G__14360,G__14361));
+})();
+return (hoplon.core.li.cljs$core$IFn$_invoke$arity$4 ? hoplon.core.li.cljs$core$IFn$_invoke$arity$4(G__14327,G__14328,G__14329,G__14330) : hoplon.core.li.call(null,G__14327,G__14328,G__14329,G__14330));
 });
