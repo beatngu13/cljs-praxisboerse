@@ -14,7 +14,7 @@
     (nav :class "navbar navbar-inverse navbar-fixed-top"
       (container
         (div :class "navbar-header"
-          (button :type "button" :class "navbar-toggle collapsed"
+          (button :class "navbar-toggle collapsed" :type "button"
                   :data-toggle "collapse" :data-target "#navbar"
                   :aria-expanded "false" :aria-controls "navbar"
                   (span :class "sr-only" (text "Toggle navigation"))
@@ -27,10 +27,10 @@
             (p :class "navbar-text pull-right" (text "Hi, ~{first-name}!"))
             (form :class "navbar-form navbar-right"
               (form-group :class (cell= {:has-error invalid-iz?})
-                (input :type "test" :placeholder "IZ-Kürzel" :class "form-control" :value iz :change #(reset! iz @%)))
+                (input :class "form-control" :type "test" :placeholder "IZ-Kürzel" :value iz :change #(reset! iz @%)))
               (form-group :class (cell= {:has-error invalid-iz?})
-                (input :type "password" :placeholder "Passwort" :class "form-control" :value pw :change #(reset! pw @%)))
-              (button :type "submit" :class "btn btn-success" :disabled invalid-iz? :click sign-in!
+                (input :class "form-control" :type "password" :placeholder "Passwort" :value pw :change #(reset! pw @%)))
+              (button :class "btn btn-success" :type "submit" :disabled invalid-iz? :click sign-in!
                 (text "Einloggen")))))))
 
     (div :class "jumbotron"
@@ -57,7 +57,7 @@
                   (map #(option :value (:shortname %) (text (:name %))) @offer-types))))
             (form-group
               (label :for "inputFilter" (text "Filter"))
-              (input :type "text" :class "form-control control-right" :placeholder "z. B. ClojureScript" :value filter-input
+              (input :class "form-control control-right" :type "text" :placeholder "z. B. ClojureScript" :value filter-input
                      ;; FIXME Why leads @% to an error?
                      :change #(reset! filter-input (.val (js/jQuery (.-target %)))) :id "filterInput")))
           (ul :class "list-group"
