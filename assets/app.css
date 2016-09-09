@@ -19,6 +19,10 @@ body {
     margin-bottom: 15px;
 }
 
+.glyphicon {
+    margin-right: 10px;
+}
+
 .jumbotron {
     height: 350px;
     color: white;

@@ -19,15 +19,18 @@
         (div :class "details-wrapper"
           (div :class "col-md-12 well"
             (div :class "row"
-              (div :class "col-md-5"
+              (div :class "col-md-4"
                 (h4 "Über das Unternehmen")
                 (cell= (:companyName company)) (br)
                 (cell= (:street company)) (br)
-                (cell= (:zipCode company)) " " (cell= (:city company)) (br)
-                (br)
-                (cell= (a :href web :target "_blank" (text web))))
-              (div :class "col-md-5"
+                (cell= (:zipCode company)) " " (cell= (:city company)) (br))
+              (div :class "col-md-4"
                 (h4 "Kontakt")
                 (cell= (:formOfAddress contact)) " " (cell= (:firstName contact)) " " (cell= (:secondName contact)) (br)
-                "Telefon: " (cell= (:telephone contact)) (br)
-                "E-Mail: " (cell= (a :href (str "mailto:" mail) (text mail)))))))))))
+                (span :class "glyphicon glyphicon-phone-alt" :aria-hidden "true") (cell= (:telephone contact)) (br)
+                (span :class "glyphicon glyphicon-envelope" :aria-hidden "true") (cell= (a :href (str "mailto:" mail) (text mail))))
+              (div :class "col-md-4"
+                (h4 "Weitere Informationen")
+                (span :class "glyphicon glyphicon-user" :aria-hidden "true") (cell= (:numberOfEmployees company)) " Mitarbeiter" (br)
+                (span :class "glyphicon glyphicon-tags" :aria-hidden "true") (cell= (:numberOfOffers company)) " Angebote" (br)
+                (span :class "glyphicon glyphicon-globe" :aria-hidden "true") (cell= (a :href web :target "_blank" (text web)))))))))))
