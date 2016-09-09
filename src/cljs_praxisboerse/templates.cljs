@@ -4,7 +4,6 @@
   (:require-macros [hoplon.core :refer [text]]
                    [javelin.core :refer [cell=]]))
 
-;; TODO Get rid off all those cells (and why does offer sometimes works without).
 (defn offer-list-item [offer company]
   (let [web      (cell= (:website company))
         contact  (cell= (:contact offer))
@@ -21,7 +20,6 @@
           (div :class "col-md-12 well"
             (div :class "row"
               (div :class "col-md-5"
-                ;; TODO Use text for consistency?
                 (h4 "Über das Unternehmen")
                 (cell= (:companyName company)) (br)
                 (cell= (:street company)) (br)
@@ -29,7 +27,6 @@
                 (br)
                 (cell= (a :href web :target "_blank" (text web))))
               (div :class "col-md-5"
-                ;; TODO Use text for consistency?
                 (h4 "Kontakt")
                 (cell= (:formOfAddress contact)) " " (cell= (:firstName contact)) " " (cell= (:secondName contact)) (br)
                 "Telefon: " (cell= (:telephone contact)) (br)
