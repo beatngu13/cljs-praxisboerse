@@ -39,10 +39,9 @@
           (reset! first-name (get-in response [:body :firstName]))
           (reset! pw "")))))
 
-(add-watch signed-in? :fetch-offer-types #(if (true? %4) (fetch-offer-types!)))
+(add-watch signed-in? :signed-in-watch #(if (true? %4) (fetch-offer-types!)))
 
-(defn fetch-offers? [_ _ old-state new-state]
-  (if (not= old-state new-state) (fetch-offers!)))
-
-(add-watch offer-type-input :fetch-offers fetch-offers?)
-(add-watch filter-input :fetch-offers fetch-offers?)
+(letfn [(fetch-offers-on-change! [_ _ old-state new-state]
+          (if (not= old-state new-state) (fetch-offers!)))]
+  (add-watch offer-type-input :offer-type-input-watch fetch-offers-on-change!)
+  (add-watch filter-input :filter-input-watch fetch-offers-on-change!))
