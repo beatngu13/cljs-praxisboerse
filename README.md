@@ -42,4 +42,4 @@ Checkout the result at https://beatngu13.github.io/cljs-praxisboerse.
 
 ## License
 
-Copyright © 2016 Daniel Kraus
+Copyright © 2017 Daniel Kraus
