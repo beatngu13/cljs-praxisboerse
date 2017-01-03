@@ -31,6 +31,5 @@
                 (span :class "glyphicon glyphicon-envelope" :aria-hidden "true") (cell= (a :href (str "mailto:" mail) (text mail))))
               (div :class "col-md-4"
                 (h4 "Weitere Informationen")
-                (span :class "glyphicon glyphicon-user" :aria-hidden "true") (cell= (:numberOfEmployees company)) " Mitarbeiter" (br)
                 (span :class "glyphicon glyphicon-tags" :aria-hidden "true") (cell= (:numberOfOffers company)) " Angebote" (br)
                 (span :class "glyphicon glyphicon-globe" :aria-hidden "true") (cell= (a :href web :target "_blank" (text web)))))))))))
